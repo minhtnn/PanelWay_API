@@ -1,0 +1,30 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using PanelWay_Backend.API.Constants;
+using PanelWay_Backend.API.Payload.Responses.Accounts;
+using PanelWay_Backend.API.Services.Interfaces;
+using PanelWay_Backend.Domain.Paginate;
+
+namespace PanelWay_Backend.API.Controllers;
+
+public class AccountController : BaseController<AccountController>
+{
+    private readonly IAccountService _accountService;
+    public AccountController(ILogger<AccountController> logger, IAccountService accountService) : base(logger)
+    {
+        _accountService = accountService;
+    }
+    [HttpGet(ApiEndpointConstant.Account.FindAccountByIdApiEndpoint)]
+    [ProducesResponseType(typeof(AccountResponse), StatusCodes.Status200OK)] 
+    public async Task<IActionResult> GetAccountById(Guid id) 
+    { 
+        var response = await _accountService.GetAccountById(id); 
+        return (response != null)? Ok(response) : NotFound(new {Message = MessageConstant.Account.NotFindAccount});
+    }
+    [HttpGet(ApiEndpointConstant.Account.FindAccountByUserIdApiEndpoint)]
+    [ProducesResponseType(typeof(AccountResponse), StatusCodes.Status200OK)] 
+    public async Task<IActionResult> GetAccountByUserId(Guid id, string role) 
+    { 
+        var response = await _accountService.GetAccountByUserId(id, role); 
+        return (response != null)? Ok(response) : NotFound(new {Message = MessageConstant.Account.NotFindAccount});
+    }
+}

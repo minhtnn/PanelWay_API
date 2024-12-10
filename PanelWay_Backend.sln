@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelWay_Backend.Domain", "PanelWay_Backend.Domain\PanelWay_Backend.Domain.csproj", "{90156768-B267-4104-BFD5-043EF63DDC38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelWay_Backend.Repository", "PanelWay_Backend.Repository\PanelWay_Backend.Repository.csproj", "{B821E7EF-074E-4365-91CD-0235CE6F120E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelWay_Backend.API", "PanelWay_Backend.API\PanelWay_Backend.API.csproj", "{31341E99-8F49-48BD-BB2D-692F2D83C400}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90156768-B267-4104-BFD5-043EF63DDC38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90156768-B267-4104-BFD5-043EF63DDC38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90156768-B267-4104-BFD5-043EF63DDC38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90156768-B267-4104-BFD5-043EF63DDC38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B821E7EF-074E-4365-91CD-0235CE6F120E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B821E7EF-074E-4365-91CD-0235CE6F120E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B821E7EF-074E-4365-91CD-0235CE6F120E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B821E7EF-074E-4365-91CD-0235CE6F120E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31341E99-8F49-48BD-BB2D-692F2D83C400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31341E99-8F49-48BD-BB2D-692F2D83C400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31341E99-8F49-48BD-BB2D-692F2D83C400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31341E99-8F49-48BD-BB2D-692F2D83C400}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
