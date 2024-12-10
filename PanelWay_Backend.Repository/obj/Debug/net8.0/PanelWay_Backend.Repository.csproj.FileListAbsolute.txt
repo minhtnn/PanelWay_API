@@ -13,3 +13,4 @@ C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_Backend\PanelWay_Backend.Repo
 C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_Backend\PanelWay_Backend.Repository\obj\Debug\net8.0\refint\PanelWay_Backend.Repository.dll
 C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_Backend\PanelWay_Backend.Repository\obj\Debug\net8.0\PanelWay_Backend.Repository.pdb
 C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_Backend\PanelWay_Backend.Repository\obj\Debug\net8.0\ref\PanelWay_Backend.Repository.dll
+C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_Backend\PanelWay_Backend.Repository\obj\Debug\net8.0\PanelWay_Backend.Repository.sourcelink.json

@@ -1,4 +1,6 @@
-﻿namespace PanelWay_Backend.API.Payload.Requests.Appointments;
+﻿using PanelWay_Backend.API.Enums;
+
+namespace PanelWay_Backend.API.Payload.Requests.Appointments;
 
 public class CreateAppointmentRequest
 {
@@ -12,7 +14,7 @@ public class CreateAppointmentRequest
 
     public int? Priority { get; set; }
 
-    public string? Status { get; set; }
+    public string? Status { get; } = nameof(AppointmentStatusEnum.Pending);
 
     public Guid AdContentId { get; set; }
 

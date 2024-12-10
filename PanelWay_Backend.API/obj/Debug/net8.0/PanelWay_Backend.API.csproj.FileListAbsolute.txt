@@ -75,3 +75,4 @@ C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_Backend\PanelWay_Backend.API\
 C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_Backend\PanelWay_Backend.API\obj\Debug\net8.0\PanelWay_Backend.API.pdb
 C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_Backend\PanelWay_Backend.API\obj\Debug\net8.0\PanelWay_Backend.API.genruntimeconfig.cache
 C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_Backend\PanelWay_Backend.API\obj\Debug\net8.0\ref\PanelWay_Backend.API.dll
+C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_Backend\PanelWay_Backend.API\obj\Debug\net8.0\PanelWay_Backend.API.sourcelink.json

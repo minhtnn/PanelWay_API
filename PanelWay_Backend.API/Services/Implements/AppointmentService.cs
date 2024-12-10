@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using PanelWay_Backend.API.Constants;
+using PanelWay_Backend.API.Enums;
 using PanelWay_Backend.API.Payload.Requests.Appointments;
 using PanelWay_Backend.API.Payload.Responses.AdContents;
 using PanelWay_Backend.API.Payload.Responses.Appointments;
@@ -23,6 +24,23 @@ public class AppointmentService : BaseService<AppointmentService>, IAppointmentS
                 predicate: x => x.Id.Equals(id)
                 );
         return (response != null) ? _mapper.Map<AppointmentResponse>(response) : null;
+    }
+
+    public async Task<DateTime?> GetIsNearestBookingDate()
+    {
+        var response = (await _unitOfWork.GetRepository<Appointment>().GetListAsync(
+            selector: x => x.BookingDate,
+            orderBy: x => x.OrderBy(x => x.BookingDate)
+        )).Min();
+        return response;
+    }
+    public async Task<ICollection<Appointment>> GetAppointmentsByBookingDate(DateTime? bookingDate)
+    {
+        var responses = await _unitOfWork.GetRepository<Appointment>().GetListAsync(
+            predicate: x => x.BookingDate.Equals(bookingDate) && 
+                x.Status.Equals(nameof(AppointmentStatusEnum.Pending))|| x.Status.Equals(nameof(AppointmentStatusEnum.Confirmed) )
+            );
+        return (responses);
     }
 
     public async Task<IPaginate<AppointmentResponse>?> GetAppointmentListPaging(int page, int size)
@@ -91,5 +109,12 @@ public class AppointmentService : BaseService<AppointmentService>, IAppointmentS
         _unitOfWork.GetRepository<Appointment>().UpdateAsync(updateAppointment);
         var isSuccessful = (await _unitOfWork.CommitAsync()) > 0;
         return isSuccessful ? _mapper.Map<AppointmentResponse>(updateAppointment) : null;
+    }
+
+    public async Task<bool> UpdateAppointments(ICollection<Appointment> requests)
+    {
+        _unitOfWork.GetRepository<Appointment>().UpdateRange(requests);
+        var isSuccessful = (await _unitOfWork.CommitAsync()) > requests.Count;
+        return isSuccessful;
     }
 }
