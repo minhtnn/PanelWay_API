@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E9sEw7iWPsp5Sn/alP3gjkznoBnjotiMru9rWpo+DS5lFQL6pQ8QegAiOPfkQ6uufjb77And4TopI70mu11gnA==",
+  "dgSpecHash": "/ioqKy1ZX48O5t5ixuV64TdcVI4VCcROsH1iSKiaFc+fRwkGm6VyKbFCLBaPDOxhI34SNi7UQI7ZWavjBy0msQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_Backend\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj",
+  "projectFilePath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\N.Minh- ADMIN\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\N.Minh- ADMIN\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",

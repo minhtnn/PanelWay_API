@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PanelWay_Backend.Domain
-build_property.ProjectDir = C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_Backend\PanelWay_Backend.Domain\
+build_property.ProjectDir = C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_API\PanelWay_Backend.Domain\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
