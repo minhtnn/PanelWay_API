@@ -8,7 +8,7 @@ public class CreateAppointmentRequest
 
     public string? Code { get; set; }
 
-    public DateTime? BookingDate { get; set; }
+    public DateTime? BookingDate { get; set; } = DateTime.UtcNow;
 
     public string? Place { get; set; }
 

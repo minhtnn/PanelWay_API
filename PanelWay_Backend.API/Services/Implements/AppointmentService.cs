@@ -13,16 +13,18 @@ namespace PanelWay_Backend.API.Services.Implements;
 
 public class AppointmentService : BaseService<AppointmentService>, IAppointmentService
 {
-    public AppointmentService(IUnitOfWork<PanelWayDbContext> unitOfWork, ILogger<AppointmentService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
-    {   
+    public AppointmentService(IUnitOfWork<PanelWayDbContext> unitOfWork, ILogger<AppointmentService> logger,
+        IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper,
+        httpContextAccessor)
+    {
     }
 
     public async Task<AppointmentResponse?> GetAppointmentById(Guid id)
     {
         var response = await _unitOfWork.GetRepository<Appointment>().SingleOrDefaultAsync
-            (
-                predicate: x => x.Id.Equals(id)
-                );
+        (
+            predicate: x => x.Id.Equals(id)
+        );
         return (response != null) ? _mapper.Map<AppointmentResponse>(response) : null;
     }
 
@@ -30,34 +32,40 @@ public class AppointmentService : BaseService<AppointmentService>, IAppointmentS
     {
         var response = (await _unitOfWork.GetRepository<Appointment>().GetListAsync(
             selector: x => x.BookingDate,
+            predicate: x =>
+                !(x.Status.Equals(nameof(AppointmentStatusEnum.Expired)) ||
+                  x.Status.Equals(nameof(AppointmentStatusEnum.Cancel))),
             orderBy: x => x.OrderBy(x => x.BookingDate)
         )).Min();
         return response;
     }
+
     public async Task<ICollection<Appointment>> GetAppointmentsByBookingDate(DateTime? bookingDate)
     {
         var responses = await _unitOfWork.GetRepository<Appointment>().GetListAsync(
-            predicate: x => x.BookingDate.Equals(bookingDate) && 
-                x.Status.Equals(nameof(AppointmentStatusEnum.Pending))|| x.Status.Equals(nameof(AppointmentStatusEnum.Confirmed) )
-            );
+            predicate: x => x.BookingDate.Equals(bookingDate) &&
+                            x.Status.Equals(nameof(AppointmentStatusEnum.Pending)) ||
+                            x.Status.Equals(nameof(AppointmentStatusEnum.Confirmed))
+        );
         return (responses);
     }
 
     public async Task<IPaginate<AppointmentResponse>?> GetAppointmentListPaging(int page, int size)
     {
         var responses = await _unitOfWork.GetRepository<Appointment>().GetPagingListAsync(
-                size: size,
-                page: page,
-                orderBy: x => x.OrderByDescending(x => x.BookingDate)
-            );
-        ;
+            // page: page,
+            // size: size,
+            orderBy: x => x.OrderByDescending(x => x.BookingDate)
+        );
+        var check = _mapper.Map<IPaginate<AppointmentResponse>>(responses);
         return (responses != null) ? _mapper.Map<IPaginate<AppointmentResponse>>(responses) : null;
     }
 
     public async Task<AppointmentResponse?> CreateNewAppointment(CreateAppointmentRequest request)
     {
         //Check empty code
-        if (string.IsNullOrWhiteSpace(request.Code.Trim())) throw new BadHttpRequestException(MessageConstant.PanelWaySystem.EmptyField);
+        if (string.IsNullOrWhiteSpace(request.Code.Trim()))
+            throw new BadHttpRequestException(MessageConstant.PanelWaySystem.EmptyField);
         //Check new Guid exists in DB
         var appointmentId = await _unitOfWork.GetRepository<Appointment>().SingleOrDefaultAsync
         (
@@ -65,7 +73,7 @@ public class AppointmentService : BaseService<AppointmentService>, IAppointmentS
             predicate: x => x.Id.Equals(request.Id)
         );
         //Re-generate Guid until it is new ones
-        if (appointmentId != null && !appointmentId.Equals(Guid.Empty))
+        if (appointmentId != null || !appointmentId.Equals(Guid.Empty))
         {
             do
             {
@@ -77,7 +85,7 @@ public class AppointmentService : BaseService<AppointmentService>, IAppointmentS
                 );
             } while (appointmentId != null && !appointmentId.Equals(Guid.Empty));
         }
-        
+
         //Check if code exists
         var appointmentCode = await _unitOfWork.GetRepository<Appointment>().SingleOrDefaultAsync
         (

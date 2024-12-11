@@ -23,14 +23,25 @@ public class BackgroundJobServices : BackgroundService
             {
                 using (var scope = _serviceProvider.CreateScope())
                 {
+                    
                     var appointmentService = scope.ServiceProvider.GetRequiredService<IAppointmentService>();
                     //Get the appointment's nearest booking datetime
                     var nearestBookingDate = await GetNearestBookingDate(appointmentService);
-                    //Get current datetome
-                    DateTime now = DateTime.UtcNow;
-                    TimeSpan timeToWait = (TimeSpan)(nearestBookingDate - now)!;
-                    await Task.Delay(timeToWait, stoppingToken);
-                    await CancelAppointmentsByBookingDate(appointmentService, nearestBookingDate);
+                    if (nearestBookingDate != null)
+                    {
+                        DateTime now = DateTime.UtcNow;
+                        //Get current datetome
+                        if (nearestBookingDate > now)
+                        {
+                            TimeSpan timeToWait = (TimeSpan)(nearestBookingDate - now)!;
+                            await Task.Delay(timeToWait, stoppingToken);
+                            await CancelAppointmentsByBookingDate(appointmentService, nearestBookingDate);
+                        }
+                        else
+                        {
+                            await CancelAppointmentsByBookingDate(appointmentService, nearestBookingDate);
+                        }
+                    }
                 }
             }
         }
