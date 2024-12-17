@@ -114,6 +114,7 @@ public static class MessageConstant
         public const string UpdateRentalLocationSuccess = "Cập nhật Rental location thành công";
         public const string CreateRentalLocationFail = "Tạo Rental location thất bại";
         public const string UpdateRentalLocationFail  = "Cập nhật Rental location thất bại";
+        public const string UnAvailableRentalLocation = "Rental location đã được chốt";
     }
     public static class RentalLocationPanelType
     {

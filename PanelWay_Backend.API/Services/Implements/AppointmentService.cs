@@ -75,12 +75,19 @@ public class AppointmentService : BaseService<AppointmentService>, IAppointmentS
         //Check empty code
         if (string.IsNullOrWhiteSpace(request.Code.Trim()))
             throw new BadHttpRequestException(MessageConstant.PanelWaySystem.EmptyField);
+        //Check if the rental location is no more available
+        var rentalLocationStatus = await _unitOfWork.GetRepository<RentalLocation>().SingleOrDefaultAsync
+            (
+                selector: x => x.Status,
+                predicate: x => x.Id.Equals(request.RentalLocationId)
+                );
+        if (rentalLocationStatus!.Equals(nameof(RentalLocationStatusEnum.Unavailable))) throw new BadHttpRequestException(MessageConstant.RentalLocation.UnAvailableRentalLocation);
         //Check if ad content already register in rental location
-        var appoinntment = await _unitOfWork.GetRepository<Appointment>().SingleOrDefaultAsync
+        var adContentInAppoinntment = await _unitOfWork.GetRepository<Appointment>().SingleOrDefaultAsync
             (
                 predicate: x => x.AdContentId.Equals(request.AdContentId) && x.RentalLocationId.Equals(request.RentalLocationId)
                 );
-        if (appoinntment != null) throw new BadHttpRequestException(MessageConstant.Appointment.AdContentExistAppointment);
+        if (adContentInAppoinntment != null) throw new BadHttpRequestException(MessageConstant.Appointment.AdContentExistAppointment);
         //Check if rental location already has 5 appointments
         var appointments = await _unitOfWork.GetRepository<Appointment>().GetListAsync
         (
