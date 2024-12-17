@@ -48,6 +48,8 @@ public static class MessageConstant
         public const string UpdateAppointmentSuccess = "Cập nhật Appointment thành công";
         public const string CreateAppointmentFail = "Tạo Appointment thất bại";
         public const string UpdateAppointmentFail  = "Cập nhật Appointment thất bại";
+        public const string ExceedAppointment  = "Rental Location đã có đủ 5 Appointments";
+        public const string AdContentExistAppointment  = "Rental Location đã có Ad Content này";
     }
     public static class AppointmentHistory
     {

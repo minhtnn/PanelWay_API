@@ -11,6 +11,7 @@ public interface IAppointmentService
     Task<ICollection<Appointment>> GetAppointmentsByBookingDate(DateTime? bookingDate);
     Task<DateTime?> GetIsNearestBookingDate();
     Task<IPaginate<AppointmentResponse>?> GetAppointmentListPaging(int page, int size);
+    Task<ICollection<AppointmentResponse>> GetAppointmentByRentalLocationId(Guid id);
     Task<AppointmentResponse?> CreateNewAppointment(CreateAppointmentRequest request);
     Task<AppointmentResponse?> UpdateAppointment(UpdateAppointmentRequest request);
     Task<bool> UpdateAppointments(ICollection<Appointment> requests);

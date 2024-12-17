@@ -61,11 +61,32 @@ public class AppointmentService : BaseService<AppointmentService>, IAppointmentS
         return (responses != null) ? _mapper.Map<IPaginate<AppointmentResponse>>(responses) : null;
     }
 
+    public async Task<ICollection<AppointmentResponse>> GetAppointmentByRentalLocationId(Guid id)
+    {
+        var appointments = await _unitOfWork.GetRepository<Appointment>().GetListAsync
+            (
+                predicate: x => x.RentalLocationId.Equals(id)
+                );
+        return (appointments != null) ? _mapper.Map<ICollection<AppointmentResponse>>(appointments) : null;
+    }
+
     public async Task<AppointmentResponse?> CreateNewAppointment(CreateAppointmentRequest request)
     {
         //Check empty code
         if (string.IsNullOrWhiteSpace(request.Code.Trim()))
             throw new BadHttpRequestException(MessageConstant.PanelWaySystem.EmptyField);
+        //Check if ad content already register in rental location
+        var appoinntment = await _unitOfWork.GetRepository<Appointment>().SingleOrDefaultAsync
+            (
+                predicate: x => x.AdContentId.Equals(request.AdContentId) && x.RentalLocationId.Equals(request.RentalLocationId)
+                );
+        if (appoinntment != null) throw new BadHttpRequestException(MessageConstant.Appointment.AdContentExistAppointment);
+        //Check if rental location already has 5 appointments
+        var appointments = await _unitOfWork.GetRepository<Appointment>().GetListAsync
+        (
+            predicate: x => x.RentalLocationId.Equals(request.RentalLocationId)
+        );
+        if (appointments.Count >= 5) throw new BadHttpRequestException(MessageConstant.Appointment.ExceedAppointment);
         //Check new Guid exists in DB
         var appointmentId = await _unitOfWork.GetRepository<Appointment>().SingleOrDefaultAsync
         (

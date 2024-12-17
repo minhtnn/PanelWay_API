@@ -30,6 +30,14 @@ public class AppointmentController : BaseController<AppointmentController>
         var response = await _appointmentService.GetAppointmentById(id);
         return (response != null) ? Ok(response) : NotFound(new {Message = MessageConstant.Appointment.NotFindAppointment});
     }
+    
+    [HttpGet(ApiEndpointConstant.Appointment.FindAppointmentByRentalLocationIdApiEndpoint)]
+    [ProducesResponseType(typeof(AppointmentResponse), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetAppointmentByRentalLocationId(Guid id)
+    {
+        var responses = await _appointmentService.GetAppointmentByRentalLocationId(id);
+        return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.Appointment.NotFindAppointment});
+    }
 
     [HttpPost(ApiEndpointConstant.Appointment.AppointmentApiEndpoint)]
     [ProducesResponseType(typeof(AppointmentResponse), StatusCodes.Status200OK)]
