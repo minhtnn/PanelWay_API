@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PanelWay_Backend.API.Services.BackgroundJobs;
 using PanelWay_Backend.API.Services.Implements;
 using PanelWay_Backend.API.Services.Interfaces;
 using PanelWay_Backend.Domain.Entities;
@@ -51,6 +52,11 @@ public static class DependencyServices
     public static IServiceCollection AddAutoMapperConfig(this IServiceCollection services, IConfiguration config)
     {
         services.AddAutoMapper(typeof(PaginateMapper));
+        return services;
+    }
+    public static IServiceCollection AddBackgroundJobService(this IServiceCollection services)
+    {
+        services.AddHostedService<BackgroundJobServices>();
         return services;
     }
 }

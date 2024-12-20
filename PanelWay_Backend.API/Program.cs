@@ -18,6 +18,7 @@ try
     builder.Services.AddServices(builder.Configuration);
     builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
     builder.Services.AddAutoMapperConfig(builder.Configuration);
+    builder.Services.AddBackgroundJobService();
     builder.Services.AddCors(options =>
     {
         options.AddPolicy(name: CorsConstant.PolicyName,

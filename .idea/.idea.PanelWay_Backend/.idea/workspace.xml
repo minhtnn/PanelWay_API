@@ -9,13 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d416360-72f2-4155-8347-9a955e9ac23a" name="Changes" comment="" />
+    <list default="true" id="8d416360-72f2-4155-8347-9a955e9ac23a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Enums/RentalLocationStatusEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PanelWay_Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PanelWay_Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Constants/MessageConstant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Constants/MessageConstant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AppointmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AppointmentService.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/81cabf2857a01351e5ab578947c7403a5b128ad1/src/coreclr/System.Private.CoreLib/src/System/Threading/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1fce37416598a5fb677f9b329d52e2e9d64e126621a5229f5a5884d87827b9ad/Mapper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ec45a28378face7b514e17aad8fd31f6121afe58f1719b3d92de706684acf4/ServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AccountService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -23,29 +33,33 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2pEus08WnL4jTslTb1gULABdEEQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.PanelWay_Backend.API: https.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.PanelWay_Backend.API: https.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;minh&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\N.Minh- ADMIN\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\N.Minh- ADMIN\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\N.Minh- ADMIN\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\N.Minh- ADMIN\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\N.Minh- ADMIN\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\N.Minh- ADMIN\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.PanelWay_Backend.API: https">
     <configuration name="PanelWay_Backend.API: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PanelWay_Backend.API/PanelWay_Backend.API.csproj" />
@@ -112,6 +126,14 @@
       <workItem from="1733661466116" duration="9849000" />
       <workItem from="1733714508921" duration="17229000" />
       <workItem from="1733802379813" duration="8778000" />
+      <workItem from="1733811881224" duration="7859000" />
+      <workItem from="1733847099957" duration="9021000" />
+      <workItem from="1733892696789" duration="363000" />
+      <workItem from="1733895268506" duration="3495000" />
+      <workItem from="1733919333327" duration="41000" />
+      <workItem from="1734230627689" duration="76000" />
+      <workItem from="1734380751811" duration="1379000" />
+      <workItem from="1734414092144" duration="2574000" />
     </task>
     <servers />
   </component>

@@ -33,6 +33,7 @@ public static class ApiEndpointConstant
         private const string AppointmentEndpoint = "/appointments";
         public const string AppointmentApiEndpoint = ApiEndpoint + AppointmentEndpoint;
         public const string FindAppointmentByIdApiEndpoint = AppointmentApiEndpoint + "/{id}";
+        public const string FindAppointmentByRentalLocationIdApiEndpoint = AppointmentApiEndpoint + "/rental-location/{id}";
     }
     public static class AppointmentHistory
     {
