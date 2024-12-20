@@ -10,10 +10,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d416360-72f2-4155-8347-9a955e9ac23a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Enums/RentalLocationStatusEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Enums/UserSubcriptionStatusEnum.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PanelWay_Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PanelWay_Backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Constants/MessageConstant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Constants/MessageConstant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/UserSubscriptionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/UserSubscriptionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/Transactions/CreateTransactionRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/Transactions/CreateTransactionRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/Transactions/UpdateTransactionRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/Transactions/UpdateTransactionRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/UserSubscriptions/CreateUserSubscriptionRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/UserSubscriptions/CreateUserSubscriptionRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Responses/Subscriptions/SubscriptionResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Responses/Subscriptions/SubscriptionResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AppointmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AppointmentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/UserSubscriptionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/UserSubscriptionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IUserSubscriptionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IUserSubscriptionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Repository.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/ref/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/ref/PanelWay_Backend.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/refint/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/refint/PanelWay_Backend.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/Account.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/AdContent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/Appointment.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/AppointmentHistory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/PanelType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/PanelWayDbContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/Payment.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/PaymentType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/RegulatoryApproval.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/RegulatoryLicense.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/RentalLocation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/RentalLocationPanelType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/Subscription.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/Transaction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/User.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/UserSubscription.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/ref/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/ref/PanelWay_Backend.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/refint/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/refint/PanelWay_Backend.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Repository.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/ref/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/ref/PanelWay_Backend.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/refint/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/refint/PanelWay_Backend.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +97,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ec45a28378face7b514e17aad8fd31f6121afe58f1719b3d92de706684acf4/ServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AccountService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -133,7 +205,12 @@
       <workItem from="1733919333327" duration="41000" />
       <workItem from="1734230627689" duration="76000" />
       <workItem from="1734380751811" duration="1379000" />
-      <workItem from="1734414092144" duration="2574000" />
+      <workItem from="1734414092144" duration="4182000" />
+      <workItem from="1734577395094" duration="5288000" />
+      <workItem from="1734589039562" duration="805000" />
+      <workItem from="1734633532356" duration="2446000" />
+      <workItem from="1734677071488" duration="6162000" />
+      <workItem from="1734698963760" duration="1888000" />
     </task>
     <servers />
   </component>

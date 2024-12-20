@@ -7,6 +7,6 @@ public interface IUserSubscriptionService
 {
     Task<UserSubscriptionResponse> GetUserSubscriptionById(Guid id);
     Task<ICollection<UserSubscriptionResponse>> GetUserSubscriptionByAccountId(Guid id);
-    Task<UserSubscriptionResponse> CreateNewUserSubscription(CreateUserSubscriptionRequest request);
+    Task<UserSubscriptionResponse?> CreateNewUserSubscription(CreateUserSubscriptionRequest request);
     Task<UserSubscriptionResponse> UpdateUserSubscription(UpdateUserSubscriptionRequest request);
 }

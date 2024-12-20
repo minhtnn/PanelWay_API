@@ -161,5 +161,7 @@ public static class MessageConstant
         public const string UpdateUserSubscriptionSuccess = "Cập nhật User subscription thành công";
         public const string CreateUserSubscriptionFail = "Tạo User subscription thất bại";
         public const string UpdateUserSubscriptionFail  = "Cập nhật User subscription thất bại";
+        public const string ExistUserSubscription  = "User subscription đã tồn tại";
+        public const string RegisterUserSubscriptionFail  = "Bạn không thể hạ xuống subscription bằng hoặc thấp cấp hơn";
     }
 }

@@ -91,7 +91,7 @@ public class AppointmentService : BaseService<AppointmentService>, IAppointmentS
         //Check if rental location already has 5 appointments
         var appointments = await _unitOfWork.GetRepository<Appointment>().GetListAsync
         (
-            predicate: x => x.RentalLocationId.Equals(request.RentalLocationId)
+            predicate: x => x.RentalLocationId.Equals(request.RentalLocationId) && !(x.Status.Equals(nameof(AppointmentStatusEnum.Expired)))
         );
         if (appointments.Count >= 5) throw new BadHttpRequestException(MessageConstant.Appointment.ExceedAppointment);
         //Check new Guid exists in DB

@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using PanelWay_Backend.API.Constants;
+using PanelWay_Backend.API.Enums;
 using PanelWay_Backend.API.Payload.Requests.UserSubscriptions;
 using PanelWay_Backend.API.Payload.Responses.UserSubscriptions;
 using PanelWay_Backend.API.Services.Interfaces;
@@ -31,13 +33,77 @@ public class UserSubscriptionService : BaseService<UserSubscriptionService>, IUs
         return (response != null) ? _mapper.Map<ICollection<UserSubscriptionResponse>>(response) : null;
     }
 
-    public Task<UserSubscriptionResponse> CreateNewUserSubscription(CreateUserSubscriptionRequest request)
+    public async Task<UserSubscriptionResponse?> CreateNewUserSubscription(CreateUserSubscriptionRequest request)
     {
-        throw new NotImplementedException();
+        //Check if account exists
+        var account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync
+        (
+            selector: x => x.Id,
+            predicate: x => x.Id.Equals(request.AccountId)
+                );
+        if (account.Equals(Guid.Empty) || account == null) throw new BadHttpRequestException(MessageConstant.Account.NotFindAccount);
+        //Check if subscription exists
+        var subcription = await _unitOfWork.GetRepository<Subscription>().SingleOrDefaultAsync
+            (
+                predicate: x => x.Id.Equals(request.SubscriptionId)
+            );
+        if (subcription == null) throw new BadHttpRequestException(MessageConstant.Subscription.NotFindSubscription);
+        //Check if user registers the subcription before
+        var userSubcription = await _unitOfWork.GetRepository<UserSubscription>().SingleOrDefaultAsync
+            (
+                predicate: x => x.AccountId.Equals(request.AccountId) &&
+                                x.SubscriptionId.Equals(request.SubscriptionId) &&
+                                !x.Status.Equals(nameof(UserSubcriptionStatusEnum.Inactive)) &&
+                                x.EndDate >= (DateTime.UtcNow)
+                );
+        if (userSubcription != null) throw new BadHttpRequestException(MessageConstant.UserSubscription.ExistUserSubscription);
+        //Regenerate the UserSubcriptionId if it exists
+        var userSubcriptionId = await _unitOfWork.GetRepository<UserSubscription>().SingleOrDefaultAsync
+            (
+                selector: x => x.Id,
+                predicate: x => x.Id.Equals(request.Id)
+                );
+        var hihi = userSubcriptionId != null || !userSubcriptionId.Equals(Guid.Empty);
+        if (!userSubcriptionId.Equals(Guid.Empty))
+        {
+            do
+            {
+                request.GetNewPrimaryKey();
+                userSubcriptionId = await _unitOfWork.GetRepository<UserSubscription>().SingleOrDefaultAsync
+                (
+                    selector: x => x.Id,
+                    predicate: x => x.Id.Equals(request.Id)
+                );
+            } while (!userSubcriptionId.Equals(Guid.Empty));
+        }
+        request.SetEndDate(subcription.Duration);
+        var newUserSubcription = _mapper.Map<UserSubscription>(request);
+        await _unitOfWork.GetRepository<UserSubscription>().InsertAsync(newUserSubcription!);
+        var check = (await _unitOfWork.CommitAsync()) > 0;
+        return check ? _mapper.Map<UserSubscriptionResponse>(newUserSubcription) : null;
     }
 
     public Task<UserSubscriptionResponse> UpdateUserSubscription(UpdateUserSubscriptionRequest request)
     {
         throw new NotImplementedException();
+    }
+
+    private double CalculatePackagePriceIfUpgrade(DateTime startDate, DateTime endDate, Subscription oldSubscription, Subscription newSubscription)
+    {
+        DateTime now = DateTime.UtcNow;
+        //Check cannot downgrade subcription
+        if (oldSubscription.Priority >= newSubscription.Priority) throw new BadHttpRequestException(MessageConstant.UserSubscription.RegisterUserSubscriptionFail);
+        //Check if the old subscription is expired
+        if ((startDate <= now) && (now <= endDate))
+        {
+            TimeSpan difference = endDate - now;
+            double totalDays = difference.Days;
+            double packageCostRemain = oldSubscription.Price * totalDays / 30;
+            return newSubscription.Price - packageCostRemain;
+        }
+        else
+        {
+            return newSubscription.Price;
+        }
     }
 }
