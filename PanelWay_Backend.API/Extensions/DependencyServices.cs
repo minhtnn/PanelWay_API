@@ -38,6 +38,7 @@ public static class DependencyServices
         services.AddScoped<IPanelTypeService, PanelTypeService>();
         services.AddScoped<IPaymentService, PaymentService>();
         services.AddScoped<IPaymentTypeService, PaymentTypeService>();
+        services.AddScoped<IPayOSService, PayOSService>();
         services.AddScoped<IRegulatoryApprovalService, RegulatoryApprovalService>();
         services.AddScoped<IRegulatoryLicenseService, RegulatoryLicenseService>();
         services.AddScoped<IRentalLocationService, RentalLocationService>();

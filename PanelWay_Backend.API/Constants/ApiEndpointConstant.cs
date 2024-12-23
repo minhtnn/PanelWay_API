@@ -54,6 +54,14 @@ public static class ApiEndpointConstant
         public const string PaymentApiEndpoint = ApiEndpoint + PaymentEndpoint;
         public const string FindPaymentByIdApiEndpoint = PaymentApiEndpoint + "/{id}";
     }
+    public static class PayOs
+    {
+        private const string PayOsEndPoint = "/payos";
+        public const string PayOsApiEndpoint = ApiEndpoint + PayOsEndPoint;
+        public const string CreateQrApiEndpoint = PayOsApiEndpoint + "/create-qr";
+        public const string FindPayOSByOrderIdApiEndpoint = PayOsApiEndpoint + "/{orderId}";
+        public const string CancelPayOSByOrderIdApiEndpoint = PayOsApiEndpoint + "/{orderId}/cancel";
+    }
     public static class PaymentType
     {
         private const string PaymentTypeEndpoint = "/payment-types";

@@ -1,4 +1,4 @@
-﻿namespace PanelWay_Backend.API.Constants;
+﻿namespace PanelWay_Backend.API.Configurations;
 
 public class JwtConstant
 {

@@ -1,4 +1,5 @@
 using Microsoft.OpenApi.Models;
+using PanelWay_Backend.API.Configurations;
 using PanelWay_Backend.API.Constants;
 using PanelWay_Backend.API.Extensions;
 
