@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PanelWay_Backend.API.Constants;
+using PanelWay_Backend.API.Enums;
 using PanelWay_Backend.API.Payload.Responses.Users;
 using PanelWay_Backend.API.Services.Interfaces;
+using PanelWay_Backend.API.Validators;
 
 namespace PanelWay_Backend.API.Controllers;
 
@@ -13,6 +15,7 @@ public class UserController : BaseController<UserController>
         _userService = userService;
     }
     
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
     [HttpGet(ApiEndpointConstant.User.FindUserByIdApiEndpoint)]
     [ProducesResponseType(typeof(UserResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetUserById(Guid id)

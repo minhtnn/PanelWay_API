@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PanelWay_Backend.API.Constants;
+using PanelWay_Backend.API.Enums;
 using PanelWay_Backend.API.Payload.Requests.UserSubscriptions;
 using PanelWay_Backend.API.Payload.Responses.UserSubscriptions;
 using PanelWay_Backend.API.Services.Interfaces;
+using PanelWay_Backend.API.Validators;
 
 namespace PanelWay_Backend.API.Controllers;
 
@@ -13,6 +15,8 @@ public class UserSubscriptionController : BaseController<UserSubscriptionControl
     {
         _userSubscriptionService = userSubscriptionService;
     }
+    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager,RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.UserSubscription.FindUserSubscriptionByIdApiEndpoint)]
     [ProducesResponseType(typeof(UserSubscriptionResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetUserSubscriptionById(Guid id)
@@ -20,6 +24,8 @@ public class UserSubscriptionController : BaseController<UserSubscriptionControl
         var responses = await _userSubscriptionService.GetUserSubscriptionById(id);
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.Transaction.NotFindTransaction});
     }
+    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.UserSubscription.FindUserSubscriptionByAccountIdApiEndpoint)]
     [ProducesResponseType(typeof(UserSubscriptionResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetUserSubscriptionByAccountId(Guid id)
@@ -28,6 +34,7 @@ public class UserSubscriptionController : BaseController<UserSubscriptionControl
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.Transaction.NotFindTransaction});
     }
     
+    [CustomAuthorize(RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpPost(ApiEndpointConstant.UserSubscription.UserSubscriptionApiEndpoint)]
     [ProducesResponseType(typeof(UserSubscriptionResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> CreateNewUserSubcription(CreateUserSubscriptionRequest request)

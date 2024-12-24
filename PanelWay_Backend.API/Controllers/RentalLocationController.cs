@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PanelWay_Backend.API.Constants;
+using PanelWay_Backend.API.Enums;
 using PanelWay_Backend.API.Payload.Responses.RentalLocations;
 using PanelWay_Backend.API.Services.Interfaces;
+using PanelWay_Backend.API.Validators;
 
 namespace PanelWay_Backend.API.Controllers;
 
@@ -13,6 +15,7 @@ public class RentalLocationController : BaseController<RentalLocationController>
         _rentalLocationService = rentalLocationService;
     }
 
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.RentalLocation.RentalLocationApiEndpoint)]
     [ProducesResponseType(typeof(ICollection<RentalLocationResponse>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetRentalLocations([FromQuery] double minLat, 
@@ -21,6 +24,8 @@ public class RentalLocationController : BaseController<RentalLocationController>
         var responses = await _rentalLocationService.GetRentalLocationListPaging(minLat, minLng, maxLat, maxLng);
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.PanelWaySystem.SystemError});
     }
+    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.RentalLocation.FindRentalLocationByIdApiEndpoint)]
     [ProducesResponseType(typeof(RentalLocationResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetRentalLocationById(Guid id)

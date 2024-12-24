@@ -24,7 +24,7 @@ public class AppointmentController : BaseController<AppointmentController>
         var responses = await _appointmentService.GetAppointmentListPaging(page, size);
         return (responses != null)? Ok(responses) : StatusCode(500, new {Message = MessageConstant.PanelWaySystem.SystemError});
     }
-    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
     [HttpGet(ApiEndpointConstant.Appointment.FindAppointmentByIdApiEndpoint)]
     [ProducesResponseType(typeof(AppointmentResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAppointmentById(Guid id)
@@ -32,7 +32,7 @@ public class AppointmentController : BaseController<AppointmentController>
         var response = await _appointmentService.GetAppointmentById(id);
         return (response != null) ? Ok(response) : NotFound(new {Message = MessageConstant.Appointment.NotFindAppointment});
     }
-    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.Appointment.FindAppointmentByRentalLocationIdApiEndpoint)]
     [ProducesResponseType(typeof(AppointmentResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAppointmentByRentalLocationId(Guid id)
@@ -41,6 +41,7 @@ public class AppointmentController : BaseController<AppointmentController>
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.Appointment.NotFindAppointment});
     }
 
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient)]
     [HttpPost(ApiEndpointConstant.Appointment.AppointmentApiEndpoint)]
     [ProducesResponseType(typeof(AppointmentResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> CreateNewAppointment(CreateAppointmentRequest request)

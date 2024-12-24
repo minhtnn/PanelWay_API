@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PanelWay_Backend.API.Constants;
+using PanelWay_Backend.API.Enums;
 using PanelWay_Backend.API.Payload.Responses.AppointmentHistory;
 using PanelWay_Backend.API.Services.Interfaces;
+using PanelWay_Backend.API.Validators;
 using PanelWay_Backend.Domain.Paginate;
 
 namespace PanelWay_Backend.API.Controllers;
@@ -13,7 +15,7 @@ public class AppointmentHistoryController : BaseController<AppointmentHistoryCon
     {
         _appointmentHistoryService = appointmentHistoryService;
     }
-    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.AppointmentHistory.FindAppointmentHistoryByIdApiEndpoint)]
     [ProducesResponseType(typeof(AppointmentHistoryResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAppointmentHistoryById(Guid id)
@@ -22,6 +24,7 @@ public class AppointmentHistoryController : BaseController<AppointmentHistoryCon
         return (response != null) ? Ok(response) : NotFound(new {Message = MessageConstant.AppointmentHistory.NotFindAppointmentHistory});
     }
     
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.AppointmentHistory.FindAppointmentHistoryByAppointmentIdApiEndpoint)]
     [ProducesResponseType(typeof(ICollection<AppointmentHistoryResponse>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAppointmentHistoryByAppointmentId(Guid id)
