@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PanelWay_Backend.API.Constants;
+using PanelWay_Backend.API.Enums;
 using PanelWay_Backend.API.Payload.Requests.Appointments;
 using PanelWay_Backend.API.Payload.Responses.Appointments;
 using PanelWay_Backend.API.Services.Interfaces;
+using PanelWay_Backend.API.Validators;
 using PanelWay_Backend.Domain.Paginate;
 
 namespace PanelWay_Backend.API.Controllers;
@@ -14,7 +16,7 @@ public class AppointmentController : BaseController<AppointmentController>
     {
         _appointmentService = appointmentService;
     }
-
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
     [HttpGet(ApiEndpointConstant.Appointment.AppointmentApiEndpoint)]
     [ProducesResponseType(typeof(IPaginate<AppointmentResponse>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAppointments([FromQuery] int size = 10, [FromQuery] int page = 1)

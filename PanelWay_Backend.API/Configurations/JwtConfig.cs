@@ -1,6 +1,6 @@
 ﻿namespace PanelWay_Backend.API.Configurations;
 
-public class JwtConstant
+public class JwtConfig
 {
     public const string SecretKey = "cjhptvaycuuqsumjqpaursgwexsyxqto";
 }

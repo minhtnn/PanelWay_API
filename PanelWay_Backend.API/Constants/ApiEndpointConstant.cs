@@ -42,6 +42,15 @@ public static class ApiEndpointConstant
         public const string FindAppointmentHistoryByIdApiEndpoint = AppointmentHistoryApiEndpoint + "/{id}";
         public const string FindAppointmentHistoryByAppointmentIdApiEndpoint = AppointmentHistoryApiEndpoint + "/appointment/{id}";
     }
+    public static class Firebase
+    {
+        private const string FirebaseEndpoint = "/firebase";
+        public const string FirebaseUploadApiEndpoint = ApiEndpoint + FirebaseEndpoint + "/upload";
+        public const string FirebaseUploadPdfApiEndpoint = ApiEndpoint + FirebaseEndpoint + "/pdf";
+        public const string FirebaseDownloadFileApiEndpoint = ApiEndpoint + FirebaseEndpoint + "/file";
+        public const string FirebaseGetNameFile = ApiEndpoint + FirebaseEndpoint + "/file-name";
+        public const string FirebaseDownload = ApiEndpoint + FirebaseEndpoint + "/download";
+    }
     public static class PanelType
     {
         private const string PanelTypeEndpoint = "/panel-types";

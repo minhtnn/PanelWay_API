@@ -60,6 +60,14 @@ public static class MessageConstant
         public const string CreateAppointmentHistoryFail = "Tạo Appointment history thất bại";
         public const string UpdateAppointmentHistoryFail  = "Cập nhật Appointment history thất bại";
     }
+    public static class Firebase
+    {
+        public const string NoFileUpload = "Không tìm thấy file để tải lên";
+        public const string UploadSuccessful = "Tải lên thành công";
+        public const string UploadFail = "Tải lên thất bại";
+        public const string DownloadSuccessful = "Tải xuống thành công";
+        public const string DownloadFail = "Tải xuống thất bại";
+    }
     public static class PanelType
     {
         public const string EmptyPanelTypeId = "Panel type id bị trống";

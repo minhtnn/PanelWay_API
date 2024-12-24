@@ -11,7 +11,7 @@ try
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
-    
+    builder.Services.AddMyCors();
     builder.Services.AddDatabase();
     builder.Services.AddUnitOfWork();
     builder.Services.AddControllers();
@@ -19,15 +19,10 @@ try
     builder.Services.AddServices(builder.Configuration);
     builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
     builder.Services.AddAutoMapperConfig(builder.Configuration);
+    builder.Services.AddFirebase(FirebaseConfig.CredentialFilePath!);
+    builder.Services.AddConfigSwagger();
+    builder.Services.AddJwtValidation();
     builder.Services.AddBackgroundJobService();
-    builder.Services.AddCors(options =>
-    {
-        options.AddPolicy(name: CorsConstant.PolicyName,
-            policy =>
-            { 
-                policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-            });
-    });
     var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -45,7 +40,7 @@ try
     {
         endpoints.MapControllers();
     });
-    app.UseCors(CorsConstant.PolicyName);
+    app.UseCors(CorsConfig.PolicyName);
     app.Run();
 }
 catch(Exception e)
