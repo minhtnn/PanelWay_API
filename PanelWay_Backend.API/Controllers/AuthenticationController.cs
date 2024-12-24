@@ -2,7 +2,7 @@
 using PanelWay_Backend.API.Constants;
 using PanelWay_Backend.API.Payload;
 using PanelWay_Backend.API.Payload.Requests.Authentication;
-using PanelWay_Backend.API.Services;
+using PanelWay_Backend.API.Payload.Requests.Firebase;
 using PanelWay_Backend.API.Services.Interfaces;
 
 namespace PanelWay_Backend.API.Controllers;
@@ -35,5 +35,30 @@ public class AuthenticationController : BaseController<AuthenticationController>
         {
             return StatusCode(500, new { Message = e.Message });
         }
+    }
+    
+    [HttpGet(ApiEndpointConstant.Firebase.FirebaseGetUser)]
+    public async Task<IActionResult> GetUser([FromBody] VerifyTokenRequest request)
+    {
+        try
+        {
+            var userRecord = await _authenticationService.GetUser(request);
+            return (userRecord.Data != null)? Ok(userRecord) : NotFound(MessageConstant.User.NotFindUser);
+        }
+        catch (Exception ex)
+        {
+            return NotFound(new
+            {
+                Message = "MessageConstant.User.NotFindUser",
+                Error = ex.Message
+            });
+        }
+    }
+
+    [HttpPost(ApiEndpointConstant.Firebase.FirebaseSaveUser)]
+    public async Task<IActionResult> SaveUser([FromBody] AuthenticationRequest request)
+    {
+        var response = await _authenticationService.SaveNewUser(request);
+        return (response.Data != null)? Ok(response) : NotFound(MessageConstant.User.NotFindUser);
     }
 }

@@ -160,6 +160,7 @@ public static class MessageConstant
         public const string UpdateUserSuccess = "Cập nhật User thành công";
         public const string CreateUserFail = "Tạo User thất bại";
         public const string UpdateUserFail  = "Cập nhật User thất bại";
+        public const string ExistUser = "User id đã tồn tại";
     }
     public static class UserSubscription
     {

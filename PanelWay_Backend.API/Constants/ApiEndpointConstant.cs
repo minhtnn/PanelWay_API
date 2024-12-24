@@ -13,7 +13,6 @@ public static class ApiEndpointConstant
         public const string SignUp = AuthenticationEndpoint + "/sign-up";
         public const string UpdatePassword = AuthenticationEndpoint + "/change-pass";
     }
-    
     public static class Account
     {
         private const string AccountEndpoint = "/accounts";
@@ -46,10 +45,10 @@ public static class ApiEndpointConstant
     {
         private const string FirebaseEndpoint = "/firebase";
         public const string FirebaseUploadApiEndpoint = ApiEndpoint + FirebaseEndpoint + "/upload";
-        public const string FirebaseUploadPdfApiEndpoint = ApiEndpoint + FirebaseEndpoint + "/pdf";
-        public const string FirebaseDownloadFileApiEndpoint = ApiEndpoint + FirebaseEndpoint + "/file";
-        public const string FirebaseGetNameFile = ApiEndpoint + FirebaseEndpoint + "/file-name";
         public const string FirebaseDownload = ApiEndpoint + FirebaseEndpoint + "/download";
+        public const string FirebaseVerifyToken = ApiEndpoint + FirebaseEndpoint + "/verify-token";
+        public const string FirebaseSaveUser = ApiEndpoint + FirebaseEndpoint + "/save-user";
+        public const string FirebaseGetUser = ApiEndpoint + FirebaseEndpoint + "/user/{id}";
     }
     public static class PanelType
     {
