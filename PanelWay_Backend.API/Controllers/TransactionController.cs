@@ -16,6 +16,16 @@ public class TransactionController : BaseController<TransactionController>
         _transactionService = transactionService;
     }
 
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
+    [HttpGet(ApiEndpointConstant.Transaction.TransactionApiEndpoint)]
+    [ProducesResponseType(typeof(IPaginate<TransactionResponse>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetTransactionPaging(string? status, [FromQuery] int page = 1,
+        [FromQuery] int size = 10)
+    {
+        var responses = await _transactionService.GetTransactionPaging(status, page, size);
+        return (responses != null) ? Ok(responses) : StatusCode(500, new {Message = MessageConstant.PanelWaySystem.SystemError});
+    }
+
     [CustomAuthorize(RoleEnum.Admin, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.Transaction.FindTransactionByAccountIdApiEndpoint)]
     [ProducesResponseType(typeof(IPaginate<TransactionResponse>), StatusCodes.Status200OK)]
@@ -43,5 +53,14 @@ public class TransactionController : BaseController<TransactionController>
     {
         var responses = await _transactionService.GetTransactionById(id);
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.Transaction.NotFindTransaction});
+    }
+
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
+    [HttpGet(ApiEndpointConstant.Transaction.TotalRevenue)]
+    [ProducesResponseType(typeof(double), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetTotalRevenue()
+    {
+        var response = await _transactionService.GetTotalRevue();
+        return (response != null) ? Ok(response) : NotFound(new {Message = MessageConstant.Transaction.NotFindTransaction});
     }
 }

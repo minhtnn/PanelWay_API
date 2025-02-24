@@ -21,39 +21,45 @@ public class BackgroundJobServices : BackgroundService
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                using (var scope = _serviceProvider.CreateScope())
+                try
                 {
-                    var appointmentService = scope.ServiceProvider.GetRequiredService<IAppointmentService>();
-                    //Get the appointment's nearest booking datetime
-                    var nearestBookingDate = await GetNearestBookingDate(appointmentService);
-                    if (nearestBookingDate.HasValue)
+                    using (var scope = _serviceProvider.CreateScope())
                     {
-                        DateTime now = DateTime.UtcNow;
-                        //Get current datetome
-                        if (nearestBookingDate > now)
+                        var appointmentService = scope.ServiceProvider.GetRequiredService<IAppointmentService>();
+                        var nearestBookingDate = await GetNearestBookingDate(appointmentService);
+
+                        if (nearestBookingDate.HasValue)
                         {
-                            TimeSpan timeToWait = (TimeSpan)(nearestBookingDate - now)!;
-                            await Task.Delay(timeToWait, stoppingToken);
+                            DateTime now = DateTime.UtcNow;
+                            if (nearestBookingDate > now)
+                            {
+                                TimeSpan timeToWait = (nearestBookingDate - now).Value;
+                                await Task.Delay(timeToWait, stoppingToken);
+                            }
                             await CancelAppointmentsByBookingDate(appointmentService, nearestBookingDate);
                         }
                         else
                         {
-                            await CancelAppointmentsByBookingDate(appointmentService, nearestBookingDate);
+                            await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
                         }
                     }
-                    else
-                    {
-                        await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
-                    }
+                }
+                catch (OperationCanceledException)
+                {
+                    // Dừng vì token hủy, không cần log lỗi.
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "An error occurred in BackgroundJobServices.");
                 }
             }
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            Console.WriteLine(e);
-            throw;
+            _logger.LogCritical(ex, "BackgroundJobServices encountered a fatal error and will terminate.");
         }
     }
+
 
     private async Task<DateTime?> GetNearestBookingDate(IAppointmentService service)
     {

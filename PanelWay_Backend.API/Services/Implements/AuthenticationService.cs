@@ -3,12 +3,12 @@ using FirebaseAdmin.Auth;
 using Microsoft.EntityFrameworkCore;
 using PanelWay_Backend.API.Constants;
 using PanelWay_Backend.API.Enums;
-using PanelWay_Backend.API.Payload.Requests;
 using PanelWay_Backend.API.Payload.Requests.Accounts;
 using PanelWay_Backend.API.Payload.Requests.Authentication;
 using PanelWay_Backend.API.Payload.Requests.Firebase;
 using PanelWay_Backend.API.Payload.Requests.Users;
 using PanelWay_Backend.API.Payload.Responses;
+using PanelWay_Backend.API.Payload.Responses.Accounts;
 using PanelWay_Backend.API.Payload.Responses.Authentication;
 using PanelWay_Backend.API.Services.Interfaces;
 using PanelWay_Backend.API.Utils;
@@ -24,7 +24,7 @@ public class AuthenticationService : BaseService<AuthenticationService>, IAuthen
     }
 
 
-    public async Task<string?> Login(LoginRequest request)
+    public async Task<AuthenticationResponse?> Login(LoginRequest request)
     {
         var account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
             predicate: x => x.User.Email.Equals(request.Email) 
@@ -38,7 +38,11 @@ public class AuthenticationService : BaseService<AuthenticationService>, IAuthen
             Email = request.Email,
             Role = request.Role
         };
-        return JwtUtil.GenerateJwtToken(loginResponse);
+        return new AuthenticationResponse()
+        {
+            AccountResponse = _mapper.Map<AccountResponse>(account),
+            JwtToken = JwtUtil.GenerateJwtToken(loginResponse)
+        };
     }
 
     public Task<string?> SignUpForCustomer(SignUpRequest request)

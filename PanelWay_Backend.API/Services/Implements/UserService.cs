@@ -22,6 +22,28 @@ public class UserService : BaseService<UserService>, IUserService
         return (response != null) ? _mapper.Map<UserResponse>(response) : null;
     }
 
+    public async Task<int> GetTotalUser()
+    {
+        var response = await _unitOfWork.GetRepository<User>().CountAsync();
+        return response;
+    }
+
+    public async Task<int> GetTotalUserByDate(DateTime startDate, DateTime endDate)
+    {
+        var response = await _unitOfWork.GetRepository<User>().CountAsync(
+            predicate: x => (x.CreatedAt >= startDate && x.CreatedAt <= endDate)
+        );
+        return response;
+    }
+
+    public async Task<int> GetTotalUserByAge(int minAge, int maxAge)
+    {
+        var response = await _unitOfWork.GetRepository<User>().CountAsync(
+                predicate: x => (x.Age >= minAge && x.Age <= maxAge)
+            );
+        return response;
+    }
+
     public Task<UserResponse> CreateNewUser(CreateUserRequest request)
     {
         throw new NotImplementedException();

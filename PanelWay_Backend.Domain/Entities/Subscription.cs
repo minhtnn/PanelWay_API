@@ -11,17 +11,15 @@ public partial class Subscription
 
     public string? Name { get; set; }
 
-    public double Price { get; set; }
+    public double? Price { get; set; }
 
     public string? Features { get; set; }
 
     public string? Status { get; set; }
 
-    public int Duration { get; set; }
+    public int? Duration { get; set; }
 
     public int? Priority { get; set; }
-
-    public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
 
     public virtual ICollection<UserSubscription> UserSubscriptions { get; set; } = new List<UserSubscription>();
 }

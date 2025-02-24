@@ -21,6 +21,11 @@ namespace PanelWay_Backend.API.Extensions;
 
 public static class DependencyServices
 {
+    public static IServiceCollection AddMemoryCacheConfig(this IServiceCollection services)
+    {
+        services.AddMemoryCache();
+        return services;
+    }
     public static IServiceCollection AddUnitOfWork(this IServiceCollection services)
     {
         services.AddScoped<IUnitOfWork<PanelWayDbContext>, UnitOfWork<PanelWayDbContext>>();
@@ -70,6 +75,7 @@ public static class DependencyServices
         services.AddScoped<ITransactionService, TransactionService>();
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IUserSubscriptionService, UserSubscriptionService>();
+        services.AddScoped<IInfobipService, InfobipService>();
         return services;
     }
     public static IServiceCollection AddJwtValidation(this IServiceCollection services)

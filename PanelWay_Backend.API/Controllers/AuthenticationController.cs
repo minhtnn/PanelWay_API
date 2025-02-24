@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
+using PanelWay_Backend.API.Configurations;
 using PanelWay_Backend.API.Constants;
 using PanelWay_Backend.API.Payload;
 using PanelWay_Backend.API.Payload.Requests.Authentication;
@@ -7,6 +9,7 @@ using PanelWay_Backend.API.Services.Interfaces;
 
 namespace PanelWay_Backend.API.Controllers;
 
+// [EnableCors(CorsConfig.PolicyName)]
 public class AuthenticationController : BaseController<AuthenticationController>
 {
     private readonly IAuthenticationService _authenticationService;

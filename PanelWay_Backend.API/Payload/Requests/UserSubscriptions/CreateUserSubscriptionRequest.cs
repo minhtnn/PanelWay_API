@@ -21,10 +21,10 @@ public class CreateUserSubscriptionRequest
         Id = Guid.NewGuid();
     }
 
-    public void SetEndDate(int period)
+    public void SetEndDate(int? period)
     {
         DateTime endDate = StartDate;
-        var dateTime = endDate.AddDays(period);
+        var dateTime = endDate.AddDays((double)period);
         EndDate = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, 23, 59, 59);
     }
 }

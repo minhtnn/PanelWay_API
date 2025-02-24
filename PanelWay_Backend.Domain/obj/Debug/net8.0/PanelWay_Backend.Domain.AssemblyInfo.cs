@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PanelWay_Backend.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d2f75c83638b3d7fdfc20e868dfdd967b2b2168")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9bacc5220c4ecd5d64ddfcc65c0e5b025018bf8")]
 [assembly: System.Reflection.AssemblyProductAttribute("PanelWay_Backend.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PanelWay_Backend.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -14,7 +14,16 @@ public class RentalLocationService : BaseService<RentalLocationService>, IRental
     {
     }
 
-    public async Task<ICollection<RentalLocationResponse>?> GetRentalLocationListPaging(double minLat, double minLng, double maxLat, double maxLng)
+    public async Task<IPaginate<RentalLocationResponse>?> GetRentalLocationListPaging(int page, int size)
+    {
+        var responses = await _unitOfWork.GetRepository<RentalLocation>().GetPagingListAsync(
+                page:page,
+                size: size
+            );
+        return (responses != null) ? _mapper.Map<IPaginate<RentalLocationResponse>>(responses) : null;
+    }
+
+    public async Task<ICollection<RentalLocationResponse>?> GetRentalLocationListByLatLng(double minLat, double minLng, double maxLat, double maxLng)
     {
         var responses = await _unitOfWork.GetRepository<RentalLocation>().GetListAsync(
             predicate: x => (x.Latitude >= minLat && (x.Latitude <= maxLat) &&
@@ -30,6 +39,13 @@ public class RentalLocationService : BaseService<RentalLocationService>, IRental
             );
         return (response != null) ? _mapper.Map<RentalLocationResponse>(response) : null;
     }
+
+    public async Task<int> GetTotalRentalLocation()
+    {
+        var response = await _unitOfWork.GetRepository<RentalLocation>().CountAsync();
+        return response;
+    }
+
     public async Task<IPaginate<RentalLocationResponse>?> GetRentalLocationBySpaceProviderId(Guid spaceProviderId, int page, int size)
     {
         var response = await _unitOfWork.GetRepository<RentalLocation>().GetPagingListAsync(

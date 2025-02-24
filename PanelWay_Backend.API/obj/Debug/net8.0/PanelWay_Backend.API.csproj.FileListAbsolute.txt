@@ -167,3 +167,4 @@ C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_API\PanelWay_Backend.API\bin\
 C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_API\PanelWay_Backend.API\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
 C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_API\PanelWay_Backend.API\bin\Debug\net8.0\FirebaseAdmin.dll
 C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_API\PanelWay_Backend.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_API\PanelWay_Backend.API\bin\Debug\net8.0\RestSharp.dll

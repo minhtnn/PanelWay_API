@@ -42,4 +42,13 @@ public class UserSubscriptionController : BaseController<UserSubscriptionControl
         var responses = await _userSubscriptionService.CreateNewUserSubscription(request);
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.UserSubscription.CreateUserSubscriptionFail});
     }
+    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
+    [HttpGet(ApiEndpointConstant.UserSubscription.PurchasingVolumeApiEndpoint)]
+    [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPurchasingVolume(string status, DateTime startDate, DateTime endDate)
+    {
+        var responses = await _userSubscriptionService.GetPurchasingVolume(status, startDate, endDate);
+        return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.UserSubscription.CreateUserSubscriptionFail});
+    }
 }

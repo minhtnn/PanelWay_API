@@ -9,6 +9,8 @@ public partial class Payment
 
     public Guid? PaymentTypeId { get; set; }
 
+    public long? PayOsOrderCode { get; set; }
+
     public string? Details { get; set; }
 
     public string? Status { get; set; }

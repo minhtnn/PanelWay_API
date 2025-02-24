@@ -9,4 +9,5 @@ public interface IUserSubscriptionService
     Task<ICollection<UserSubscriptionResponse>> GetUserSubscriptionByAccountId(Guid id);
     Task<UserSubscriptionResponse?> CreateNewUserSubscription(CreateUserSubscriptionRequest request);
     Task<UserSubscriptionResponse> UpdateUserSubscription(UpdateUserSubscriptionRequest request);
+    Task<int> GetPurchasingVolume(string status, DateTime? startDate, DateTime? endDate);
 }

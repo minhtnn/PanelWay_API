@@ -23,4 +23,31 @@ public class UserController : BaseController<UserController>
         var responses = await _userService.GetUserById(id);
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.User.NotFindUser});
     }
+    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
+    [HttpGet(ApiEndpointConstant.User.UserTotalByAgeApiEndpoint)]
+    [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetTotalUserByAge(int minAge, int maxAge)
+    {
+        var responses = await _userService.GetTotalUserByAge(minAge, maxAge);
+        return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.User.NotFindUser});
+    }
+    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
+    [HttpGet(ApiEndpointConstant.User.UserTotalApiEndpoint)]
+    [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetTotalUser()
+    {
+        var responses = await _userService.GetTotalUser();
+        return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.User.NotFindUser});
+    }
+    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
+    [HttpGet(ApiEndpointConstant.User.UserTotalByDateApiEndpoint)]
+    [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetNewTotalUserByDate(DateTime startDate, DateTime endDate)
+    {
+        var responses = await _userService.GetTotalUserByDate(startDate, endDate);
+        return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.User.NotFindUser});
+    }
 }

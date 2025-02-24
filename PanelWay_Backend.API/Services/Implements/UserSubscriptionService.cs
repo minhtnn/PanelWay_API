@@ -88,7 +88,19 @@ public class UserSubscriptionService : BaseService<UserSubscriptionService>, IUs
         throw new NotImplementedException();
     }
 
-    private double CalculatePackagePriceIfUpgrade(DateTime startDate, DateTime endDate, Subscription oldSubscription, Subscription newSubscription)
+    public async Task<int> GetPurchasingVolume(string status, DateTime? startDate, DateTime? endDate)
+    {
+        var response = await _unitOfWork.GetRepository<UserSubscription>().CountAsync(
+            predicate: x =>
+                (string.IsNullOrEmpty(status) || x.Status.Equals(status)) &&
+                (!startDate.HasValue || x.StartDate > startDate.Value) &&
+                (!endDate.HasValue || x.StartDate <= endDate.Value)
+        );
+        return response;
+    }
+
+
+    private double? CalculatePackagePriceIfUpgrade(DateTime startDate, DateTime endDate, Subscription oldSubscription, Subscription newSubscription)
     {
         DateTime now = DateTime.UtcNow;
         //Check cannot downgrade subcription
@@ -98,7 +110,7 @@ public class UserSubscriptionService : BaseService<UserSubscriptionService>, IUs
         {
             TimeSpan difference = endDate - now;
             double totalDays = difference.Days;
-            double packageCostRemain = oldSubscription.Price * totalDays / 30;
+            double? packageCostRemain = oldSubscription.Price * totalDays / 30;
             return newSubscription.Price - packageCostRemain;
         }
         else

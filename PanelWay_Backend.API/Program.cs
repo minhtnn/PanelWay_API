@@ -17,6 +17,7 @@ try
     builder.Services.AddControllers();
     builder.Services.AddHttpContextAccessor();
     builder.Services.AddServices(builder.Configuration);
+    builder.Services.AddMemoryCacheConfig();
     builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
     builder.Services.AddAutoMapperConfig(builder.Configuration);
     builder.Services.AddFirebase(FirebaseConfig.CredentialFilePath!);
@@ -33,6 +34,7 @@ try
         app.UseSwaggerUI();
     }
     app.UseRouting();
+    app.UseCors(CorsConfig.PolicyName);
     app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();
@@ -40,7 +42,6 @@ try
     {
         endpoints.MapControllers();
     });
-    app.UseCors(CorsConfig.PolicyName);
     app.Run();
 }
 catch(Exception e)

@@ -50,17 +50,24 @@ public static class ApiEndpointConstant
         public const string FirebaseSaveUser = ApiEndpoint + FirebaseEndpoint + "/save-user";
         public const string FirebaseGetUser = ApiEndpoint + FirebaseEndpoint + "/user/{id}";
     }
+    public static class Otp
+    {
+        private const string OtpEndpoint = "/otp";
+        public const string OtpSendSmsApiEndpoint = ApiEndpoint + OtpEndpoint + "/sms";
+        public const string OtpSmsVerifyApiEndpoint = ApiEndpoint + OtpEndpoint + "/sms-verify";
+    }
     public static class PanelType
     {
         private const string PanelTypeEndpoint = "/panel-types";
         public const string PanelTypeApiEndpoint = ApiEndpoint + PanelTypeEndpoint;
-        public const string FindAppointmentByIdApiEndpoint = PanelTypeApiEndpoint + "/{id}";
+        public const string FindPanelTypeByIdApiEndpoint = PanelTypeApiEndpoint + "/{id}";
     }
     public static class Payment
     {
         private const string PaymentEndpoint = "/payments";
         public const string PaymentApiEndpoint = ApiEndpoint + PaymentEndpoint;
         public const string FindPaymentByIdApiEndpoint = PaymentApiEndpoint + "/{id}";
+        
     }
     public static class PayOs
     {
@@ -94,7 +101,10 @@ public static class ApiEndpointConstant
     {
         private const string RentalLocationEndpoint = "/rental-locations";
         public const string RentalLocationApiEndpoint = ApiEndpoint + RentalLocationEndpoint;
+        public const string RentalLocationLatLngApiEndpoint = RentalLocationApiEndpoint + "/latitude-longitude";
         public const string FindRentalLocationByIdApiEndpoint = RentalLocationApiEndpoint + "/{id}";
+        public const string RentalLocationTotalApiEndpoint = RentalLocationEndpoint + "/count";
+
     }
     public static class RentalLocationPanelType
     {
@@ -115,12 +125,16 @@ public static class ApiEndpointConstant
         public const string FindTransactionByIdApiEndpoint = TransactionApiEndpoint + "/{id}";
         public const string FindTransactionByAccountIdApiEndpoint = TransactionApiEndpoint + "/account/{id}";
         public const string FindTransactionByUserSubscriptionIdAndPaymentIdApiEndpoint = TransactionApiEndpoint + "/user-subscription/{userSubscriptionId}/payment/{paymentId}";
+        public const string TotalRevenue = TransactionApiEndpoint + "/total-revenue";
     }
     public static class User
     {
         private const string UserEndpoint = "/users";
         public const string UserApiEndpoint = ApiEndpoint + UserEndpoint;
         public const string FindUserByIdApiEndpoint = UserApiEndpoint + "/{id}";
+        public const string UserTotalApiEndpoint = UserApiEndpoint + "/count";
+        public const string UserTotalByDateApiEndpoint = UserApiEndpoint + "/date-count";
+        public const string UserTotalByAgeApiEndpoint = UserApiEndpoint + "/age-count";
     }
     public static class UserSubscription
     {
@@ -128,5 +142,6 @@ public static class ApiEndpointConstant
         public const string UserSubscriptionApiEndpoint = ApiEndpoint + UserSubscriptionEndpoint;
         public const string FindUserSubscriptionByIdApiEndpoint = UserSubscriptionApiEndpoint + "/{id}";
         public const string FindUserSubscriptionByAccountIdApiEndpoint = UserSubscriptionApiEndpoint + "/account/{id}";
+        public const string PurchasingVolumeApiEndpoint = UserSubscriptionApiEndpoint + "/purchasing-volume";
     }
 }

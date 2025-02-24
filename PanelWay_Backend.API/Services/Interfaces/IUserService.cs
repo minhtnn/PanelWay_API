@@ -6,6 +6,9 @@ namespace PanelWay_Backend.API.Services.Interfaces;
 public interface IUserService
 {
     Task<UserResponse> GetUserById(Guid id);
+    Task<int> GetTotalUser();
+    Task<int> GetTotalUserByDate(DateTime startDate, DateTime endDate);
+    Task<int> GetTotalUserByAge(int minAge, int maxAge);
     Task<UserResponse> CreateNewUser(CreateUserRequest request);
     Task<UserResponse> UpdateUser(UpdateUserRequest request);
 }

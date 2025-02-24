@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using PanelWay_Backend.API.Enums;
 using PanelWay_Backend.API.Payload.Requests.Payments;
 using PanelWay_Backend.API.Payload.Responses.Payments;
 using PanelWay_Backend.API.Services.Interfaces;
@@ -25,4 +26,6 @@ public class PaymentService : BaseService<PaymentService>, IPaymentService
     {
         throw new NotImplementedException();
     }
+
+    
 }

@@ -20,6 +20,4 @@ public partial class UserSubscription
     public virtual Account? Account { get; set; }
 
     public virtual Subscription? Subscription { get; set; }
-
-    public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
 }
