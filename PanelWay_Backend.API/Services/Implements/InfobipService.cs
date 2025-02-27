@@ -20,8 +20,12 @@ public class InfobipService : BaseService<InfobipService>,IInfobipService
     }
     public async Task<string> SendOtpAsync(string phoneNumber, string otpCode)
     {
+        if (string.IsNullOrEmpty(_baseUrl))
+        {
+            throw new ArgumentException("Base URL của Infobip không được để trống.");
+        }
         var client = new RestClient(_baseUrl);
-        var request = new RestRequest("", Method.Post);
+        var request = new RestRequest("sms/2/text/advanced", Method.Post);
         request.AddHeader("Authorization", $"App {_apiKey}");
         request.AddHeader("Content-Type", "application/json");
 

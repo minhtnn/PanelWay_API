@@ -16,10 +16,10 @@ public class RentalLocationController : BaseController<RentalLocationController>
         _rentalLocationService = rentalLocationService;
     }
 
-    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.RentalLocation.RentalLocationApiEndpoint)]
     [ProducesResponseType(typeof(IPaginate<RentalLocationResponse>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetRentalLocations(int page, int size)
+    public async Task<IActionResult> GetRentalLocations(int page = 1, int size = 10)
     {
         var responses = await _rentalLocationService.GetRentalLocationListPaging(page, size);
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.PanelWaySystem.SystemError});

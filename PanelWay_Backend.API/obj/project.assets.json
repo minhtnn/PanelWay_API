@@ -3497,11 +3497,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.API\\PanelWay_Backend.API.csproj",
+      "projectUniqueName": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.API\\PanelWay_Backend.API.csproj",
       "projectName": "PanelWay_Backend.API",
-      "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.API\\PanelWay_Backend.API.csproj",
+      "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.API\\PanelWay_Backend.API.csproj",
       "packagesPath": "C:\\Users\\N.Minh- ADMIN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.API\\obj\\",
+      "outputPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\N.Minh- ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3519,8 +3519,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj": {
-              "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj"
+            "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj": {
+              "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj"
             }
           }
         }

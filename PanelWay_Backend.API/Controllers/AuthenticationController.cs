@@ -58,6 +58,38 @@ public class AuthenticationController : BaseController<AuthenticationController>
         }
     }
 
+    [HttpPost(ApiEndpointConstant.Authentication.SignUp)]
+    public async Task<IActionResult> SignUp([FromBody] SignUpRequest request)
+    {
+        var response = await _authenticationService.SignUpForCustomer(request);
+        if (response == null)
+        {
+            return Unauthorized(new ErrorResponse()
+            {
+                StatusCode = StatusCodes.Status401Unauthorized,
+                Error = MessageConstant.Authentication.InvalidUsernameOrPassword,
+                TimeStamp = DateTime.UtcNow
+            });
+        }
+        return Ok(response);
+    }
+    
+    [HttpPost(ApiEndpointConstant.Authentication.UpdatePassword)]
+    public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
+    {
+        var response = await _authenticationService.ChangePasswordForCustomer(request);
+        if (response == false)
+        {
+            return Unauthorized(new ErrorResponse()
+            {
+                StatusCode = StatusCodes.Status401Unauthorized,
+                Error = MessageConstant.Authentication.InvalidUsernameOrPassword,
+                TimeStamp = DateTime.UtcNow
+            });
+        }
+        return Ok(response);
+    }
+    
     [HttpPost(ApiEndpointConstant.Firebase.FirebaseSaveUser)]
     public async Task<IActionResult> SaveUser([FromBody] AuthenticationRequest request)
     {

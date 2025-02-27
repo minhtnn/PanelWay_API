@@ -20,7 +20,7 @@ public class JwtUtil
         List<Claim> claims = new List<Claim>()
         {
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim(JwtRegisteredClaimNames.Email, account.Email!),
+            new Claim(JwtRegisteredClaimNames.Email, account.PhoneNumber!),
             new Claim(ClaimTypes.Role, account.Role!)
         };
         var expires = DateTime.Now.AddMinutes(30);

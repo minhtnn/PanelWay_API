@@ -2,6 +2,7 @@
 
 public class SignUpRequest
 {
+    public int Age { get; set; }
     public string? FullName { get; set; }
 
     public string? Gender { get; set; }
@@ -13,10 +14,4 @@ public class SignUpRequest
     public string? UserName { get; set; }
 
     public string? Password { get; set; }
-
-    public DateTime? CreatedAt { get; set; }
-
-    public DateTime? UpdatedAt { get; set; }
-
-    public string? Status { get; set; }
 }

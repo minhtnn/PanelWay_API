@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj": {}
+    "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj": {
+    "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj",
         "projectName": "PanelWay_Backend.Domain",
-        "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj",
+        "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj",
         "packagesPath": "C:\\Users\\N.Minh- ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Domain\\obj\\",
+        "outputPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\N.Minh- ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",

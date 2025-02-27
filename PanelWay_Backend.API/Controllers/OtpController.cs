@@ -22,7 +22,7 @@ public class OtpController : BaseController<OtpController>
         if (string.IsNullOrEmpty(request.PhoneNumber))
             return BadRequest("Số điện thoại không hợp lệ.");
 
-        string otpCode = new Random().Next(100000, 999999).ToString();
+        string otpCode = new Random().Next(1000, 9999).ToString();
         _cache.Set(request.PhoneNumber, otpCode, TimeSpan.FromMinutes(5));
 
         var result = await _infobipService.SendOtpAsync(request.PhoneNumber, otpCode);

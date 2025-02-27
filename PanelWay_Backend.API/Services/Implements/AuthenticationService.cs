@@ -35,7 +35,7 @@ public class AuthenticationService : BaseService<AuthenticationService>, IAuthen
         if (account == null) throw new BadHttpRequestException(MessageConstant.Authentication.InvalidUsernameOrPassword);
         var loginResponse = new LoginResponse()
         {
-            Email = request.Email,
+            PhoneNumber = account.User!.PhoneNumber,
             Role = request.Role
         };
         return new AuthenticationResponse()
@@ -45,14 +45,65 @@ public class AuthenticationService : BaseService<AuthenticationService>, IAuthen
         };
     }
 
-    public Task<string?> SignUpForCustomer(SignUpRequest request)
+    public async Task<AuthenticationResponse?> SignUpForCustomer(SignUpRequest request)
     {
-        throw new NotImplementedException();
+        var userCheck = await _unitOfWork.GetRepository<User>().SingleOrDefaultAsync(
+            predicate: x => 
+                (!string.IsNullOrEmpty(request.PhoneNumber.Trim()) && x.PhoneNumber.Equals(request.PhoneNumber.Trim()))
+        );
+
+        if (userCheck != null) throw new BadHttpRequestException(MessageConstant.Authentication.ExistEmailOrPhone);
+        var user = new User
+        {
+            Id = Guid.NewGuid(),
+            Age = request.Age,
+            PhoneNumber = request.PhoneNumber.Trim(),
+            FullName = request.FullName,
+            Password = request.Password,
+            UserName = request.UserName,
+            Gender = request.Gender,
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow,
+            VerificationStatus = false,
+            Status = nameof(AccountStatusEnum.Active)
+        };
+        await _unitOfWork.GetRepository<User>().InsertAsync(user);
+        var account = new Account
+        {
+            Id = Guid.NewGuid(),
+            Role = nameof(RoleEnum.AdvertisingClient),
+            IndividualPoint = 100,
+            UserId = user.Id,
+            Status = nameof(AccountStatusEnum.Active)
+        };
+        await _unitOfWork.GetRepository<Account>().InsertAsync(account);
+        var isSuccess = (await _unitOfWork.CommitAsync()) > 1;
+        if (isSuccess)
+        {
+            var loginResponse = new LoginResponse()
+            {
+                PhoneNumber = request.PhoneNumber,
+                Role = account.Role
+            };
+            return new AuthenticationResponse()
+            {
+                AccountResponse = _mapper.Map<AccountResponse>(account),
+                JwtToken = JwtUtil.GenerateJwtToken(loginResponse)
+            };
+        }
+        return null;
     }
 
-    public Task<bool> ChangePasswordForCustomer(ChangePasswordRequest request)
+    public async Task<bool?> ChangePasswordForCustomer(ChangePasswordRequest request)
     {
-        throw new NotImplementedException();
+        var user = await _unitOfWork.GetRepository<User>().SingleOrDefaultAsync(
+                predicate: x=> x.Email.Equals(request.Email) && x.Password.Equals(request.OldPassword)
+            );
+        if (user == null) throw new BadHttpRequestException(MessageConstant.Authentication.UpdatePasswordFail);
+        user.Password = request.NewPassword;
+        await _unitOfWork.GetRepository<User>().InsertAsync(user);
+        var isSuccess = (await _unitOfWork.CommitAsync()) > 1;
+        return isSuccess;
     }
 
     public async Task<DataReponse> GetUser(VerifyTokenRequest request)
