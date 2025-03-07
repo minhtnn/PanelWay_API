@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using PanelWay_Backend.API.Constants;
 using PanelWay_Backend.API.Enums;
 using PanelWay_Backend.API.Payload.Requests.UserSubscriptions;
@@ -24,11 +25,11 @@ public class UserSubscriptionService : BaseService<UserSubscriptionService>, IUs
         return (response != null) ? _mapper.Map<UserSubscriptionResponse>(response) : null;
     }
 
-    public async Task<ICollection<UserSubscriptionResponse>> GetUserSubscriptionByAccountId(Guid id)
+    public async Task<ICollection<UserSubscriptionResponse>> GetUserSubscriptionByAccountId(Guid id, string status)
     {
         var response = await _unitOfWork.GetRepository<UserSubscription>().GetListAsync
         (
-            predicate: x => x.AccountId.Equals(id)
+            predicate: x => x.AccountId.Equals(id) && x.Status.Equals(status)
         );
         return (response != null) ? _mapper.Map<ICollection<UserSubscriptionResponse>>(response) : null;
     }
@@ -58,27 +59,35 @@ public class UserSubscriptionService : BaseService<UserSubscriptionService>, IUs
                 );
         if (userSubcription != null) throw new BadHttpRequestException(MessageConstant.UserSubscription.ExistUserSubscription);
         //Regenerate the UserSubcriptionId if it exists
-        var userSubcriptionId = await _unitOfWork.GetRepository<UserSubscription>().SingleOrDefaultAsync
+        var userSubcriptionQuery = await _unitOfWork.GetRepository<UserSubscription>().SingleOrDefaultAsync
             (
-                selector: x => x.Id,
-                predicate: x => x.Id.Equals(request.Id)
-                );
-        var hihi = userSubcriptionId != null || !userSubcriptionId.Equals(Guid.Empty);
-        if (!userSubcriptionId.Equals(Guid.Empty))
+                predicate: x => x.Id.Equals(request.Id),
+                include: x => x.Include(x => x.Subscription)
+            );
+        if (userSubcriptionQuery.Subscription.Priority > subcription.Priority) throw new BadHttpRequestException(MessageConstant.UserSubscription.RegisterUserSubscriptionFail);
+        if (!userSubcriptionQuery.Id.Equals(Guid.Empty))
         {
             do
             {
                 request.GetNewPrimaryKey();
-                userSubcriptionId = await _unitOfWork.GetRepository<UserSubscription>().SingleOrDefaultAsync
+                userSubcriptionQuery.Id = await _unitOfWork.GetRepository<UserSubscription>().SingleOrDefaultAsync
                 (
                     selector: x => x.Id,
                     predicate: x => x.Id.Equals(request.Id)
                 );
-            } while (!userSubcriptionId.Equals(Guid.Empty));
+            } while (!userSubcriptionQuery.Id.Equals(Guid.Empty));
         }
         request.SetEndDate(subcription.Duration);
         var newUserSubcription = _mapper.Map<UserSubscription>(request);
         await _unitOfWork.GetRepository<UserSubscription>().InsertAsync(newUserSubcription!);
+        var prevSubcription = await _unitOfWork.GetRepository<UserSubscription>().SingleOrDefaultAsync(
+                predicate: x => x.AccountId.Equals(request.AccountId)
+            );
+        if (prevSubcription != null)
+        {
+            prevSubcription.Status = nameof(UserSubcriptionStatusEnum.Inactive);
+            _unitOfWork.GetRepository<UserSubscription>().UpdateAsync(prevSubcription);
+        }
         var check = (await _unitOfWork.CommitAsync()) > 0;
         return check ? _mapper.Map<UserSubscriptionResponse>(newUserSubcription) : null;
     }

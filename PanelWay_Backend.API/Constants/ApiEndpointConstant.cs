@@ -106,6 +106,12 @@ public static class ApiEndpointConstant
         public const string RentalLocationTotalApiEndpoint = RentalLocationEndpoint + "/count";
 
     }
+    public static class RentalLocationImage
+    {
+        private const string RentalLocationImageEndpoint = "/rental-location-images";
+        public const string RentalLocationImageApiEndpoint = ApiEndpoint + RentalLocationImageEndpoint;
+        public const string FindImageByRentalLocationIdApiEndpoint = RentalLocationImageApiEndpoint + "/rental-location/{id}";
+    }
     public static class RentalLocationPanelType
     {
         private const string RentalLocationPanelTypeEndpoint = "/rental-location-panel-types";

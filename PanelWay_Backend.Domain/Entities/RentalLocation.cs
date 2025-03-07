@@ -37,6 +37,8 @@ public partial class RentalLocation
 
     public virtual ICollection<RegulatoryApproval> RegulatoryApprovals { get; set; } = new List<RegulatoryApproval>();
 
+    public virtual ICollection<RentalLocationImage> RentalLocationImages { get; set; } = new List<RentalLocationImage>();
+
     public virtual ICollection<RentalLocationPanelType> RentalLocationPanelTypes { get; set; } = new List<RentalLocationPanelType>();
 
     public virtual Account? SpaceProvider { get; set; }

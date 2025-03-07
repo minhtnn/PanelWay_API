@@ -27,7 +27,7 @@ public class AuthenticationService : BaseService<AuthenticationService>, IAuthen
     public async Task<AuthenticationResponse?> Login(LoginRequest request)
     {
         var account = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync(
-            predicate: x => x.User.Email.Equals(request.Email) 
+            predicate: x => x.User.PhoneNumber.Equals(request.PhoneNumber) 
                             && x.User.Password.Equals(request.Password)
                             && x.Role.Equals(request.Role),
             include: x => x.Include(x => x.User)
@@ -35,7 +35,7 @@ public class AuthenticationService : BaseService<AuthenticationService>, IAuthen
         if (account == null) throw new BadHttpRequestException(MessageConstant.Authentication.InvalidUsernameOrPassword);
         var loginResponse = new LoginResponse()
         {
-            PhoneNumber = account.User!.PhoneNumber,
+            PhoneNumber = request.PhoneNumber,
             Role = request.Role
         };
         return new AuthenticationResponse()

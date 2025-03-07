@@ -76,6 +76,7 @@ public static class DependencyServices
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IUserSubscriptionService, UserSubscriptionService>();
         services.AddScoped<IInfobipService, InfobipService>();
+        services.AddScoped<IRentalLocationImageService, RentalLocationImageService>();
         return services;
     }
     public static IServiceCollection AddJwtValidation(this IServiceCollection services)
@@ -96,7 +97,7 @@ public static class DependencyServices
                 //Tự cấp token
                 ValidateIssuer = false,
                 ValidateAudience = false,
-                //Ký vào token
+                ValidateLifetime = false,
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(secretKeyBytes),
                 ClockSkew = TimeSpan.Zero

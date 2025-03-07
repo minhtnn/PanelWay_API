@@ -4,7 +4,7 @@ namespace PanelWay_Backend.API.Payload.Requests.Authentication;
 
 public class LoginRequest
 {
-    public string? Email { get; set; }
+    public string? PhoneNumber { get; set; }
     public string? Password { get; set; }
     public string? Role { get; set; } = nameof(RoleEnum.AdvertisingClient);
 }

@@ -24,7 +24,9 @@ public class SubscriptionService : BaseService<SubscriptionService>, ISubscripti
 
     public async Task<ICollection<SubscriptionResponse>> GetSubscriptionList()
     {
-        var responses = await _unitOfWork.GetRepository<Subscription>().GetListAsync();
+        var responses = await _unitOfWork.GetRepository<Subscription>().GetListAsync(
+                orderBy: x => x.OrderBy(x => x.Price)
+            );
         return _mapper.Map<ICollection<SubscriptionResponse>>(responses);
     }
 

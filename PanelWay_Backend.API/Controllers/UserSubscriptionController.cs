@@ -28,9 +28,9 @@ public class UserSubscriptionController : BaseController<UserSubscriptionControl
     [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.UserSubscription.FindUserSubscriptionByAccountIdApiEndpoint)]
     [ProducesResponseType(typeof(UserSubscriptionResponse), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetUserSubscriptionByAccountId(Guid id)
+    public async Task<IActionResult> GetUserSubscriptionByAccountId(Guid id, string status)
     {
-        var responses = await _userSubscriptionService.GetUserSubscriptionByAccountId(id);
+        var responses = await _userSubscriptionService.GetUserSubscriptionByAccountId(id, status);
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.Transaction.NotFindTransaction});
     }
     
