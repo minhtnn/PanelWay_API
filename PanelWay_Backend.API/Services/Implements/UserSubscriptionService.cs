@@ -49,7 +49,7 @@ public class UserSubscriptionService : BaseService<UserSubscriptionService>, IUs
                 predicate: x => x.Id.Equals(request.SubscriptionId)
             );
         if (subcription == null) throw new BadHttpRequestException(MessageConstant.Subscription.NotFindSubscription);
-        //Check if user registers the subcription before
+        //Check if user registers the subscription before
         var userSubcription = await _unitOfWork.GetRepository<UserSubscription>().SingleOrDefaultAsync
             (
                 predicate: x => x.AccountId.Equals(request.AccountId) &&
@@ -58,25 +58,17 @@ public class UserSubscriptionService : BaseService<UserSubscriptionService>, IUs
                                 x.EndDate >= (DateTime.UtcNow)
                 );
         if (userSubcription != null) throw new BadHttpRequestException(MessageConstant.UserSubscription.ExistUserSubscription);
-        //Regenerate the UserSubcriptionId if it exists
-        var userSubcriptionQuery = await _unitOfWork.GetRepository<UserSubscription>().SingleOrDefaultAsync
-            (
-                predicate: x => x.Id.Equals(request.Id),
-                include: x => x.Include(x => x.Subscription)
-            );
-        if (userSubcriptionQuery.Subscription.Priority > subcription.Priority) throw new BadHttpRequestException(MessageConstant.UserSubscription.RegisterUserSubscriptionFail);
-        if (!userSubcriptionQuery.Id.Equals(Guid.Empty))
-        {
-            do
-            {
-                request.GetNewPrimaryKey();
-                userSubcriptionQuery.Id = await _unitOfWork.GetRepository<UserSubscription>().SingleOrDefaultAsync
-                (
-                    selector: x => x.Id,
-                    predicate: x => x.Id.Equals(request.Id)
-                );
-            } while (!userSubcriptionQuery.Id.Equals(Guid.Empty));
-        }
+        
+        //Check if user registers the lower subscription
+        var lowerUserSubcription = await _unitOfWork.GetRepository<UserSubscription>().SingleOrDefaultAsync
+        (
+            predicate: x => x.AccountId.Equals(request.AccountId) &&
+                            x.Subscription.Priority < subcription.Priority &&
+                            !x.Status.Equals(nameof(UserSubcriptionStatusEnum.Inactive)) &&
+                            x.EndDate >= (DateTime.UtcNow)
+        );
+        if (lowerUserSubcription != null )throw new BadHttpRequestException(MessageConstant.UserSubscription.RegisterUserSubscriptionFail);
+        request.GetNewPrimaryKey(Guid.NewGuid());
         request.SetEndDate(subcription.Duration);
         var newUserSubcription = _mapper.Map<UserSubscription>(request);
         await _unitOfWork.GetRepository<UserSubscription>().InsertAsync(newUserSubcription!);

@@ -30,7 +30,7 @@ public class AuthenticationService : BaseService<AuthenticationService>, IAuthen
             predicate: x => x.User.PhoneNumber.Equals(request.PhoneNumber) 
                             && x.User.Password.Equals(request.Password)
                             && x.Role.Equals(request.Role),
-            include: x => x.Include(x => x.User)
+                        include: x => x.Include(x => x.User)
             );
         if (account == null) throw new BadHttpRequestException(MessageConstant.Authentication.InvalidUsernameOrPassword);
         var loginResponse = new LoginResponse()

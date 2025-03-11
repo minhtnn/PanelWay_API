@@ -10,26 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d416360-72f2-4155-8347-9a955e9ac23a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/RentalLocationImageController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Mappers/RentalLocationImageMapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/RentalLocationImage/CreateRentalLocationImageRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/RentalLocationImage/UpdateRentalLocationImageRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Responses/RentalLocationImages/RentalLocationImageResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/RentalLocationImageService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IRentalLocationImageService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PanelWay_Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PanelWay_Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Constants/ApiEndpointConstant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Constants/ApiEndpointConstant.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/UserSubscriptionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/UserSubscriptionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Extensions/DependencyServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Extensions/DependencyServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/Authentication/LoginRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/Authentication/LoginRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Mappers/AccountMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Mappers/AccountMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/UserSubscriptions/CreateUserSubscriptionRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/UserSubscriptions/CreateUserSubscriptionRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Responses/Accounts/AccountResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Responses/Accounts/AccountResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AuthenticationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AuthenticationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/InfobipService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/InfobipService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/SubscriptionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/SubscriptionService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/UserSubscriptionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/UserSubscriptionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IUserSubscriptionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IUserSubscriptionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.pdb" afterDir="false" />
@@ -37,7 +23,7 @@
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Repository.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.Repository.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/PanelWay_Backend.API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/PanelWay_Backend.API.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/PanelWay_Backend.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/PanelWay_Backend.API.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/PanelWay_Backend.API.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/PanelWay_Backend.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/PanelWay_Backend.API.pdb" afterDir="false" />
@@ -46,21 +32,138 @@
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/PanelWay_Backend.Repository.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/PanelWay_Backend.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/PanelWay_Backend.Repository.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/AutoMapper.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Azure.Core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Azure.Identity.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/FirebaseAdmin.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Google.Api.Gax.Rest.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Google.Api.Gax.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Google.Apis.Auth.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Google.Apis.Core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Google.Apis.Storage.v1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Google.Apis.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Google.Cloud.Storage.V1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.AspNetCore.Authentication.JwtBearer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.AspNetCore.OpenApi.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.Data.SqlClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.EntityFrameworkCore.SqlServer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.EntityFrameworkCore.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.Identity.Client.Extensions.Msal.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.Identity.Client.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.IdentityModel.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.IdentityModel.Logging.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.OpenApi.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.SqlServer.Server.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Microsoft.Win32.SystemEvents.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Newtonsoft.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/PanelWay_Backend.API.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/PanelWay_Backend.API.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/PanelWay_Backend.API.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/PanelWay_Backend.API.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/PanelWay_Backend.API.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/PanelWay_Backend.Domain.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/PanelWay_Backend.Domain.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/PanelWay_Backend.Repository.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/PanelWay_Backend.Repository.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/RestSharp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/AutoMapper.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Azure.Core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Azure.Identity.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/FirebaseAdmin.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Google.Api.Gax.Rest.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Google.Api.Gax.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Google.Apis.Auth.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Google.Apis.Core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Google.Apis.Storage.v1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Google.Apis.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Google.Cloud.Storage.V1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.AspNetCore.Authentication.JwtBearer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.AspNetCore.OpenApi.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.Data.SqlClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.EntityFrameworkCore.SqlServer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.EntityFrameworkCore.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.Identity.Client.Extensions.Msal.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.Identity.Client.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.IdentityModel.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.IdentityModel.Logging.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.OpenApi.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.SqlServer.Server.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Microsoft.Win32.SystemEvents.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Newtonsoft.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/PanelWay_Backend.API.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/PanelWay_Backend.API.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/PanelWay_Backend.API.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/PanelWay_Backend.API.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/PanelWay_Backend.API.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/PanelWay_Backend.Domain.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/PanelWay_Backend.Domain.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/PanelWay_Backend.Repository.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/PanelWay_Backend.Repository.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/RestSharp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/System.CodeDom.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/System.Configuration.ConfigurationManager.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/System.Drawing.Common.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/System.Management.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/System.Memory.Data.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/System.Runtime.Caching.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/System.Security.Permissions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/System.Windows.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/payos-lib-backend-dotnet.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/publish.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging/web.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/System.CodeDom.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/System.Configuration.ConfigurationManager.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/System.Drawing.Common.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/System.Management.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/System.Memory.Data.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/System.Runtime.Caching.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/System.Security.Permissions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/System.Windows.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/payos-lib-backend-dotnet.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/web.config" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/ref/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/ref/PanelWay_Backend.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/refint/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/refint/PanelWay_Backend.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/PanelWay_Backend.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/PanelWay_Backend.API.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/PanelWay_Backend.API.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/PanelWay_Backend.API.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.dll" afterDir="false" />
@@ -69,72 +172,59 @@
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/ref/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/ref/PanelWay_Backend.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/refint/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/refint/PanelWay_Backend.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/PanelWayDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/PanelWayDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/RentalLocation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/RentalLocation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/PanelWay_Backend.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/PanelWay_Backend.Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Release/net8.0/PanelWay_Backend.Domain.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Release/net8.0/PanelWay_Backend.Domain.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Release/net8.0/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Release/net8.0/PanelWay_Backend.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Release/net8.0/PanelWay_Backend.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Release/net8.0/PanelWay_Backend.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/PanelWay_Backend.Domain.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/ref/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/ref/PanelWay_Backend.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/refint/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Debug/net8.0/refint/PanelWay_Backend.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/PanelWay_Backend.Domain.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/PanelWay_Backend.Domain.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/PanelWay_Backend.Domain.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/ref/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/ref/PanelWay_Backend.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/refint/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/Release/net8.0/refint/PanelWay_Backend.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Repository.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Repository.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Repository.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Debug/net8.0/PanelWay_Backend.Repository.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Release/net8.0/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Release/net8.0/PanelWay_Backend.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Release/net8.0/PanelWay_Backend.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Release/net8.0/PanelWay_Backend.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Release/net8.0/PanelWay_Backend.Repository.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Release/net8.0/PanelWay_Backend.Repository.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Release/net8.0/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Release/net8.0/PanelWay_Backend.Repository.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Release/net8.0/PanelWay_Backend.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/bin/Release/net8.0/PanelWay_Backend.Repository.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/PanelWay_Backend.Repository.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/ref/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/ref/PanelWay_Backend.Repository.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/refint/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Debug/net8.0/refint/PanelWay_Backend.Repository.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/PanelWay_Backend.Repository.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/PanelWay_Backend.Repository.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/PanelWay_Backend.Repository.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/PanelWay_Backend.Repository.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/PanelWay_Backend.Repository.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/ref/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/ref/PanelWay_Backend.Repository.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/refint/PanelWay_Backend.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/Release/net8.0/refint/PanelWay_Backend.Repository.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Repository/obj/rider.project.restore.info" afterDir="false" />
     </list>
@@ -178,12 +268,23 @@
     ".NET Launch Settings Profile.PanelWay_Backend.API: http.executor": "Run",
     ".NET Launch Settings Profile.PanelWay_Backend.API: https.executor": "Run",
     "Publish to folder.Publish PanelWay_Backend to folder (1).executor": "Run",
+    "Publish to folder.Publish PanelWay_Backend to folder (10).executor": "Run",
+    "Publish to folder.Publish PanelWay_Backend to folder (11).executor": "Run",
+    "Publish to folder.Publish PanelWay_Backend to folder (12).executor": "Run",
+    "Publish to folder.Publish PanelWay_Backend to folder (13).executor": "Run",
+    "Publish to folder.Publish PanelWay_Backend to folder (14).executor": "Run",
+    "Publish to folder.Publish PanelWay_Backend to folder (15).executor": "Run",
     "Publish to folder.Publish PanelWay_Backend to folder (2).executor": "Run",
     "Publish to folder.Publish PanelWay_Backend to folder (3).executor": "Run",
     "Publish to folder.Publish PanelWay_Backend to folder (4).executor": "Run",
+    "Publish to folder.Publish PanelWay_Backend to folder (5).executor": "Run",
+    "Publish to folder.Publish PanelWay_Backend to folder (6).executor": "Run",
+    "Publish to folder.Publish PanelWay_Backend to folder (7).executor": "Run",
+    "Publish to folder.Publish PanelWay_Backend to folder (8).executor": "Run",
+    "Publish to folder.Publish PanelWay_Backend to folder (9).executor": "Run",
     "Publish to folder.Publish PanelWay_Backend to folder.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "27__02__2025",
+    "git-widget-placeholder": "07__03__2025",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -200,6 +301,30 @@
   }
 }]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.PanelWay_Backend.API: https">
+    <configuration name="Publish PanelWay_Backend to folder (10)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Public" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (11)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$USER_HOME$/Downloads/PanelWayPublish/public" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (12)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$USER_HOME$/Downloads/PanelWayPublish/staging" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (13)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="Portable" target_folder="$USER_HOME$/Downloads/PanelWayPublish/staging" target_framework="net8.0" uuid_high="-8064425858369634044" uuid_low="-4623784773960213448" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (14)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$USER_HOME$/Downloads/PanelWayPublish/staging" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (15)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$USER_HOME$/Downloads/PanelWayPublish/staging" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
     <configuration name="Publish PanelWay_Backend to folder (1)" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
       <method v="2" />
@@ -213,6 +338,26 @@
       <method v="2" />
     </configuration>
     <configuration name="Publish PanelWay_Backend to folder (4)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (5)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (6)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Public" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (7)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="Portable" target_folder="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging" target_framework="net8.0" uuid_high="-8064425858369634044" uuid_low="-4623784773960213448" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (8)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="Portable" target_folder="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Public" target_framework="net8.0" uuid_high="-8064425858369634044" uuid_low="-4623784773960213448" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (9)" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Staging" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
       <method v="2" />
     </configuration>
@@ -347,7 +492,13 @@
       <workItem from="1741330913346" duration="2079000" />
       <workItem from="1741339576597" duration="63000" />
       <workItem from="1741341281890" duration="1838000" />
-      <workItem from="1741362352219" duration="4076000" />
+      <workItem from="1741362352219" duration="6159000" />
+      <workItem from="1741513583625" duration="871000" />
+      <workItem from="1741526954087" duration="1906000" />
+      <workItem from="1741532665321" duration="1234000" />
+      <workItem from="1741599415232" duration="1968000" />
+      <workItem from="1741614828300" duration="166000" />
+      <workItem from="1741699361563" duration="3554000" />
     </task>
     <servers />
   </component>
@@ -357,5 +508,29 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AuthenticationService.cs</url>
+          <line>28</line>
+          <properties documentPath="C:\Users\N.Minh- ADMIN\Documents\PanelWay\PanelWay_API_3\PanelWay_API\PanelWay_Backend.API\Services\Implements\AuthenticationService.cs" containingFunctionPresentation="Method 'Login'">
+            <startOffsets>
+              <option value="1186" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1548" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="LaunchSettings">
+        <watch expression="userSubcriptionQuery" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

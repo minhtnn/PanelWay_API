@@ -16,9 +16,9 @@ public class CreateUserSubscriptionRequest
 
     public string? Status { get; } = nameof(UserSubcriptionStatusEnum.Active);
 
-    public void GetNewPrimaryKey()
+    public void GetNewPrimaryKey(Guid id)
     {
-        Id = Guid.NewGuid();
+        Id = id;
     }
 
     public void SetEndDate(int? period)
