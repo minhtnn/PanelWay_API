@@ -6,6 +6,7 @@ using PanelWay_Backend.API.Payload.Requests.UserSubscriptions;
 using PanelWay_Backend.API.Payload.Responses.UserSubscriptions;
 using PanelWay_Backend.API.Services.Interfaces;
 using PanelWay_Backend.Domain.Entities;
+using PanelWay_Backend.Domain.Paginate;
 using PanelWay_Backend.Repository.Interfaces;
 
 namespace PanelWay_Backend.API.Services.Implements;
@@ -32,6 +33,17 @@ public class UserSubscriptionService : BaseService<UserSubscriptionService>, IUs
             predicate: x => x.AccountId.Equals(id) && x.Status.Equals(status)
         );
         return (response != null) ? _mapper.Map<ICollection<UserSubscriptionResponse>>(response) : null;
+    }
+
+    public async Task<IPaginate<UserSubscriptionResponse>> GetUserSubscriptionBySubscriptionId(int size, int page, Guid id, string status)
+    {
+        var response = await _unitOfWork.GetRepository<UserSubscription>().GetPagingListAsync
+        (
+            predicate: x => x.SubscriptionId.Equals(id) && x.Status.Equals(status),
+            size: size,
+            page: page
+        );
+        return (response != null) ? _mapper.Map<IPaginate<UserSubscriptionResponse>>(response) : null;
     }
 
     public async Task<UserSubscriptionResponse?> CreateNewUserSubscription(CreateUserSubscriptionRequest request)
@@ -63,7 +75,7 @@ public class UserSubscriptionService : BaseService<UserSubscriptionService>, IUs
         var lowerUserSubcription = await _unitOfWork.GetRepository<UserSubscription>().SingleOrDefaultAsync
         (
             predicate: x => x.AccountId.Equals(request.AccountId) &&
-                            x.Subscription.Priority < subcription.Priority &&
+                            x.Subscription.Priority > subcription.Priority &&
                             !x.Status.Equals(nameof(UserSubcriptionStatusEnum.Inactive)) &&
                             x.EndDate >= (DateTime.UtcNow)
         );
@@ -84,6 +96,9 @@ public class UserSubscriptionService : BaseService<UserSubscriptionService>, IUs
         return check ? _mapper.Map<UserSubscriptionResponse>(newUserSubcription) : null;
     }
 
+    
+    
+    
     public Task<UserSubscriptionResponse> UpdateUserSubscription(UpdateUserSubscriptionRequest request)
     {
         throw new NotImplementedException();

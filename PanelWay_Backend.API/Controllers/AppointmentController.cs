@@ -24,13 +24,28 @@ public class AppointmentController : BaseController<AppointmentController>
         var responses = await _appointmentService.GetAppointmentListPaging(page, size);
         return (responses != null)? Ok(responses) : StatusCode(500, new {Message = MessageConstant.PanelWaySystem.SystemError});
     }
-    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager,RoleEnum.SpaceProvider, RoleEnum.AdvertisingClient)]
     [HttpGet(ApiEndpointConstant.Appointment.FindAppointmentByIdApiEndpoint)]
     [ProducesResponseType(typeof(AppointmentResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAppointmentById(Guid id)
     {
         var response = await _appointmentService.GetAppointmentById(id);
         return (response != null) ? Ok(response) : NotFound(new {Message = MessageConstant.Appointment.NotFindAppointment});
+    }
+    [CustomAuthorize(RoleEnum.SpaceProvider, RoleEnum.AdvertisingClient)]
+    [HttpGet(ApiEndpointConstant.Appointment.AppointmentByAccountIdApiEndpoint)]
+    [ProducesResponseType(typeof(ICollection<AppointmentResponse>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult?> GetAppointmentByAccountId(Guid id, string role, DateTime? bookDate)
+    {
+        var responses = await _appointmentService.GetAppointmentByAccountId(id, role, bookDate);
+
+        if (responses != null)
+        {
+            return Ok(responses);
+        }
+
+        return StatusCode(500, new { Message = MessageConstant.PanelWaySystem.SystemError });
     }
     [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.Appointment.FindAppointmentByRentalLocationIdApiEndpoint)]

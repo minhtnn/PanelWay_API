@@ -10,4 +10,7 @@ public class CreatePayOSRequest
     public List<ItemData> Items { get; set; }
     public string ReturnUrl { get; set; }
     public string CancelUrl{ get; set; }
+    
+    public string SubcriptionId { get; set; }
+    public string AccountId { get; set; }
 }

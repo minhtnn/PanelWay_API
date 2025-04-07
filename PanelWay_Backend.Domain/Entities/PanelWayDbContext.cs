@@ -57,7 +57,10 @@ public partial class PanelWayDbContext : DbContext
         IConfiguration configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", true, true).Build();
-        return configuration["ConnectionStrings:DefaultConnectionString"];
+        return configuration["ConnectionStrings:" 
+                              + "DefaultConnectionString"
+                             // + "PanelWaySystemDatabase"
+        ];
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

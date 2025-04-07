@@ -13,6 +13,7 @@ namespace PanelWay_Backend.API.Services.Implements;
 
 public class PayOSService : BaseService<PayOSService>, IPayOSService
 {
+    private readonly int MAX_EXIST_QR = 180;
     public PayOSService(IUnitOfWork<PanelWayDbContext> unitOfWork, ILogger<PayOSService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
     {
     }
@@ -48,7 +49,7 @@ public class PayOSService : BaseService<PayOSService>, IPayOSService
             items: request.Items,
             returnUrl: request.ReturnUrl,
             cancelUrl: request.CancelUrl,
-            expiredAt:DateTimeOffset.UtcNow.ToUnixTimeSeconds() + 60 
+            expiredAt:DateTimeOffset.UtcNow.ToUnixTimeSeconds() + MAX_EXIST_QR 
         );
         var paymentTypeId = await _unitOfWork.GetRepository<PaymentType>().SingleOrDefaultAsync(
                 selector: x => x.Id,
@@ -56,7 +57,7 @@ public class PayOSService : BaseService<PayOSService>, IPayOSService
             );
         
         var response = await payOS.createPaymentLink(paymentLinkRequest);
-        await _unitOfWork.GetRepository<Payment>().InsertAsync(new Payment
+        var newPayment = new Payment
         {
             Id = Guid.NewGuid(),
             PaymentTypeId = paymentTypeId,
@@ -64,7 +65,18 @@ public class PayOSService : BaseService<PayOSService>, IPayOSService
             CreatedAt = DateTime.UtcNow,
             Status = response.status,
             Details = response.description
-        });
+        };
+        await _unitOfWork.GetRepository<Payment>().InsertAsync(newPayment);
+        var newTransaction = new Transaction
+        {
+            Id = Guid.NewGuid(),
+            SubscriptionId = Guid.Parse(request.SubcriptionId),
+            AccountId = Guid.Parse(request.AccountId),
+            PaymentId = newPayment.Id,
+            Status = newPayment.Status,
+            Amount = request.Amount,
+        };
+        await _unitOfWork.GetRepository<Transaction>().InsertAsync(newTransaction);
         var isCreateSuccess = await _unitOfWork.CommitAsync() > 0;
         return isCreateSuccess? response : null;
     }
@@ -85,22 +97,13 @@ public class PayOSService : BaseService<PayOSService>, IPayOSService
                     payment.Status = response.status;
                     _unitOfWork.GetRepository<Payment>().UpdateAsync(payment);
                     var transactions = response.transactions;
-                    foreach (var item in transactions)
-                    {
-                        var newTransaction = new Transaction
-                        {
-                            Id = Guid.NewGuid(),
-                            SubscriptionId = Guid.Parse(item.reference),
-                            PaymentId = payment.Id,
-                            Status = payment.Status,
-                            Amount = item.amount,
-                            TransactionDate = (response.status == nameof(PayOSStatusEnum.PAID))
-                                ? DateTime.Parse(response.createdAt)
-                                : DateTime.Parse(response.canceledAt),
-
-                        };
-                        await _unitOfWork.GetRepository<Transaction>().InsertAsync(newTransaction);
-                    }
+                    var existingTransaction = await _unitOfWork.GetRepository<Transaction>().SingleOrDefaultAsync(
+                        predicate: x => x.PaymentId == payment.Id
+                    );
+                    existingTransaction.Status = payment.Status;
+                    existingTransaction.TransactionDate =
+                        DateTime.Parse(transactions[0].transactionDateTime).ToUniversalTime();
+                    _unitOfWork.GetRepository<Transaction>().UpdateAsync(existingTransaction);
                     var isUpdateSuccess = await _unitOfWork.CommitAsync();
                 }
             }

@@ -2,10 +2,6 @@
 
 public class CreateRentalLocationRequest
 {
-    public Guid Id { get; set; }
-
-    public string? Code { get; set; }
-
     public double? LocationX { get; set; }
 
     public double? LocationY { get; set; }
@@ -15,8 +11,6 @@ public class CreateRentalLocationRequest
     public string? PanelSize { get; set; }
 
     public string? Description { get; set; }
-
-    public DateTime? PostDate { get; set; }
 
     public DateTime? AvailableDate { get; set; }
 

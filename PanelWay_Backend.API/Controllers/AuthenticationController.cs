@@ -5,6 +5,7 @@ using PanelWay_Backend.API.Constants;
 using PanelWay_Backend.API.Payload;
 using PanelWay_Backend.API.Payload.Requests.Authentication;
 using PanelWay_Backend.API.Payload.Requests.Firebase;
+using PanelWay_Backend.API.Payload.Responses.Authentication;
 using PanelWay_Backend.API.Services.Interfaces;
 
 namespace PanelWay_Backend.API.Controllers;
@@ -40,6 +41,8 @@ public class AuthenticationController : BaseController<AuthenticationController>
         }
     }
     
+    
+    
     [HttpGet(ApiEndpointConstant.Firebase.FirebaseGetUser)]
     public async Task<IActionResult> GetUser([FromBody] VerifyTokenRequest request)
     {
@@ -52,7 +55,7 @@ public class AuthenticationController : BaseController<AuthenticationController>
         {
             return NotFound(new
             {
-                Message = "MessageConstant.User.NotFindUser",
+                Message = MessageConstant.User.NotFindUser,
                 Error = ex.Message
             });
         }
@@ -73,6 +76,31 @@ public class AuthenticationController : BaseController<AuthenticationController>
         }
         return Ok(response);
     }
+    
+    // [HttpPost(ApiEndpointConstant.Authentication.SignUpUltra)]
+    // public async Task<IActionResult> SignUpUltra([FromBody] List<SignUpRequest> requests)
+    // {
+    //     var responses = new List<AuthenticationResponse>();
+    //     foreach (var request in requests)
+    //     {
+    //         var response = await _authenticationService.SignUpForCustomer(request);
+    //         if (response != null)
+    //         {
+    //             responses.Add(response);
+    //         }
+    //     }
+    //     
+    //     if (responses == null)
+    //     {
+    //         return Unauthorized(new ErrorResponse()
+    //         {
+    //             StatusCode = StatusCodes.Status401Unauthorized,
+    //             Error = MessageConstant.Authentication.InvalidUsernameOrPassword,
+    //             TimeStamp = DateTime.UtcNow
+    //         });
+    //     }
+    //     return Ok(responses);
+    // }
     
     [HttpPost(ApiEndpointConstant.Authentication.UpdatePassword)]
     public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)

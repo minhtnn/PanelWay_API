@@ -5,6 +5,7 @@ using PanelWay_Backend.API.Payload.Requests.UserSubscriptions;
 using PanelWay_Backend.API.Payload.Responses.UserSubscriptions;
 using PanelWay_Backend.API.Services.Interfaces;
 using PanelWay_Backend.API.Validators;
+using PanelWay_Backend.Domain.Paginate;
 
 namespace PanelWay_Backend.API.Controllers;
 
@@ -27,10 +28,19 @@ public class UserSubscriptionController : BaseController<UserSubscriptionControl
     
     [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.UserSubscription.FindUserSubscriptionByAccountIdApiEndpoint)]
-    [ProducesResponseType(typeof(UserSubscriptionResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ICollection<UserSubscriptionResponse>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetUserSubscriptionByAccountId(Guid id, string status)
     {
         var responses = await _userSubscriptionService.GetUserSubscriptionByAccountId(id, status);
+        return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.Transaction.NotFindTransaction});
+    }
+    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
+    [HttpGet(ApiEndpointConstant.UserSubscription.FindUserSubscriptionBySubscriptionIdApiEndpoint)]
+    [ProducesResponseType(typeof(IPaginate<UserSubscriptionResponse>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetUserSubscriptionsBySubscriptionId(Guid id, string status,[FromQuery] int size = 10, [FromQuery] int page = 1)
+    {
+        var responses = await _userSubscriptionService.GetUserSubscriptionBySubscriptionId(size, page,id, status);
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.Transaction.NotFindTransaction});
     }
     

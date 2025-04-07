@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PanelWay_Backend.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dfceaa6d28f3c290d6ce5b9f2cffa74563a79706")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a628a80be3fc99cf5d8880969a890f26264da5f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("PanelWay_Backend.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PanelWay_Backend.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

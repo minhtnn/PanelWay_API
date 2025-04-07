@@ -40,6 +40,16 @@ public class RentalLocationService : BaseService<RentalLocationService>, IRental
         return (response != null) ? _mapper.Map<RentalLocationResponse>(response) : null;
     }
 
+    public async Task<ICollection<RentalLocationResponse>> GetRentalLocationBySpaceProviderId(Guid id, string? status)
+    {
+        var responses = await _unitOfWork.GetRepository<RentalLocation>().GetListAsync(
+                predicate: x => x.SpaceProviderId.Equals(id) 
+                                && (string.IsNullOrEmpty(status) || x.Status.Equals(status)),
+                orderBy: x => x.OrderByDescending(x => x.PostDate)
+            );
+        return (responses != null) ? _mapper.Map<ICollection<RentalLocationResponse>>(responses) : null;
+    }
+
     public async Task<int> GetTotalRentalLocation()
     {
         var response = await _unitOfWork.GetRepository<RentalLocation>().CountAsync();
@@ -57,13 +67,26 @@ public class RentalLocationService : BaseService<RentalLocationService>, IRental
         return (response != null) ? _mapper.Map<IPaginate<RentalLocationResponse>>(response) : null;
     }
 
-    public Task<RentalLocationResponse> CreateRentalLocation(CreateRentalLocationRequest request)
+    public async Task<RentalLocationResponse?> CreateRentalLocation(CreateRentalLocationRequest request)
     {
-        throw new NotImplementedException();
+        var rentalLocation = _mapper.Map<RentalLocation>(request);
+        rentalLocation.Id = Guid.NewGuid();
+        rentalLocation.PostDate = DateTime.UtcNow;
+        await _unitOfWork.GetRepository<RentalLocation>().InsertAsync(rentalLocation);
+        var isSuccessful = (await _unitOfWork.CommitAsync()) > 0;
+        return isSuccessful? _mapper.Map<RentalLocationResponse>(rentalLocation) : null;
     }
 
-    public Task<RentalLocationResponse> UpdateRentalLocation(UpdateRentalLocationRequest request)
+    public async Task<RentalLocationResponse?> UpdateRentalLocation(UpdateRentalLocationRequest request)
     {
-        throw new NotImplementedException();
+        var rentalLocation = _mapper.Map<RentalLocation>(request);
+        var rentalLocations = _unitOfWork.GetRepository<RentalLocation>().GetListAsync(
+                selector: x => x.Code
+            );
+        rentalLocation.Id = Guid.NewGuid();
+        rentalLocation.PostDate = DateTime.UtcNow;
+        _unitOfWork.GetRepository<RentalLocation>().UpdateAsync(rentalLocation);
+        var isSuccessful = (await _unitOfWork.CommitAsync()) > 0;
+        return isSuccessful? _mapper.Map<RentalLocationResponse>(rentalLocation) : null;
     }
 }

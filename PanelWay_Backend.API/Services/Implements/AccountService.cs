@@ -7,6 +7,7 @@ using PanelWay_Backend.API.Payload.Responses.Accounts;
 using PanelWay_Backend.API.Services.Interfaces;
 using PanelWay_Backend.Domain.Entities;
 using PanelWay_Backend.Domain.Entities;
+using PanelWay_Backend.Domain.Paginate;
 using PanelWay_Backend.Repository.Interfaces;
 
 namespace PanelWay_Backend.API.Services.Implements;
@@ -17,6 +18,19 @@ public class AccountService : BaseService<AccountService>, IAccountService
     {
     }
 
+    public async Task<IPaginate<AccountResponse>?> GetAccountsPaging(int size = 10,int page = 1)
+    {
+        var response = await _unitOfWork.GetRepository<Account>().GetPagingListAsync
+        (
+            predicate: x => !x.Role.Equals(nameof(RoleEnum.Manager)) && !x.Role.Equals(nameof(RoleEnum.Admin)),
+            include: x => x.Include(x => x.User),
+            size: size,
+            page: page,
+            orderBy: x => x.OrderByDescending(x => x.User.CreatedAt)
+        );
+        return (response != null)? _mapper.Map<IPaginate<AccountResponse>>(response) : null;
+    }
+    
     public async Task<AccountResponse?> GetAccountById(Guid id)
     {
         var response = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync

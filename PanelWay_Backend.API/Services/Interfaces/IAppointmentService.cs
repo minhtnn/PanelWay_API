@@ -9,6 +9,7 @@ public interface IAppointmentService
 {
     Task<AppointmentResponse?> GetAppointmentById(Guid id);
     Task<ICollection<Appointment>> GetAppointmentsByBookingDate(DateTime? bookingDate);
+    Task<ICollection<AppointmentResponse>?> GetAppointmentByAccountId(Guid id, string role, DateTime? bookDate);
     Task<DateTime?> GetIsNearestBookingDate();
     Task<IPaginate<AppointmentResponse>?> GetAppointmentListPaging(int page, int size);
     Task<ICollection<AppointmentResponse>> GetAppointmentByRentalLocationId(Guid id);

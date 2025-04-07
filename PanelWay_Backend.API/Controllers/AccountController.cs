@@ -15,6 +15,16 @@ public class AccountController : BaseController<AccountController>
     {
         _accountService = accountService;
     }
+    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
+    [HttpGet(ApiEndpointConstant.Account.AccountApiEndpoint)]
+    [ProducesResponseType(typeof(IPaginate<AccountResponse>), StatusCodes.Status200OK)] 
+    public async Task<IActionResult> GetAccounts([FromQuery] int size = 10, [FromQuery] int page = 1) 
+    { 
+        var response = await _accountService.GetAccountsPaging(size, page); 
+        return (response != null)? Ok(response) : NotFound(new {Message = MessageConstant.Account.NotFindAccount});
+    }
+    
     [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
     [HttpGet(ApiEndpointConstant.Account.FindAccountByIdApiEndpoint)]
     [ProducesResponseType(typeof(AccountResponse), StatusCodes.Status200OK)] 

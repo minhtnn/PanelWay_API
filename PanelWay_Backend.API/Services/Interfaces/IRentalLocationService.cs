@@ -9,7 +9,8 @@ public interface IRentalLocationService
     Task<IPaginate<RentalLocationResponse>?> GetRentalLocationListPaging(int page, int size);
     Task<ICollection<RentalLocationResponse>?> GetRentalLocationListByLatLng(double minLat, double minLng, double maxLat, double maxLng);
     Task<RentalLocationResponse> GetRentalLocationById(Guid id);
+    Task<ICollection<RentalLocationResponse>> GetRentalLocationBySpaceProviderId(Guid id, string? status);
     Task<int> GetTotalRentalLocation();
-    Task<RentalLocationResponse> CreateRentalLocation(CreateRentalLocationRequest request);
-    Task<RentalLocationResponse> UpdateRentalLocation(UpdateRentalLocationRequest request);
+    Task<RentalLocationResponse?> CreateRentalLocation(CreateRentalLocationRequest request);
+    Task<RentalLocationResponse?> UpdateRentalLocation(UpdateRentalLocationRequest request);
 }

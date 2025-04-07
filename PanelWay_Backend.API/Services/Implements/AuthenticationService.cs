@@ -77,6 +77,21 @@ public class AuthenticationService : BaseService<AuthenticationService>, IAuthen
             Status = nameof(AccountStatusEnum.Active)
         };
         await _unitOfWork.GetRepository<Account>().InsertAsync(account);
+        var lowestSubscription = await _unitOfWork.GetRepository<Subscription>().SingleOrDefaultAsync(
+                predicate: x => x.Priority <= 1
+            );
+        var utcNow = DateTime.UtcNow;
+        var endDate = utcNow.AddDays((double)lowestSubscription.Duration);
+        var userSubscription = new UserSubscription
+        {
+            Id = Guid.NewGuid(),
+            AccountId = account.Id,
+            SubscriptionId = lowestSubscription.Id,
+            StartDate = utcNow,
+            EndDate = new DateTime(endDate.Year, endDate.Month, endDate.Day, 23, 59, 59),
+            Status = nameof(UserSubcriptionStatusEnum.Active)
+        };
+        await _unitOfWork.GetRepository<UserSubscription>().InsertAsync(userSubscription);
         var isSuccess = (await _unitOfWork.CommitAsync()) > 1;
         if (isSuccess)
         {
