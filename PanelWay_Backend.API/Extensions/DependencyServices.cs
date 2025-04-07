@@ -35,12 +35,15 @@ public static class DependencyServices
     {
         services.AddCors(options =>
         {
-           options.AddPolicy(name: CorsConfig.PolicyName,
-               policy =>
-               { 
-                   policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-               });
+            options.AddPolicy(CorsConfig.PolicyName, builder =>
+            {
+                builder.WithOrigins("http://localhost:5173")
+                       .AllowAnyHeader()
+                       .AllowAnyMethod()
+                       .AllowCredentials(); // Cho phép gửi cookie/token
+            });
         });
+
         return services;
     }
     public static IServiceCollection AddDatabase(this IServiceCollection services)
