@@ -18,7 +18,8 @@ public class RentalLocationService : BaseService<RentalLocationService>, IRental
     {
         var responses = await _unitOfWork.GetRepository<RentalLocation>().GetPagingListAsync(
                 page:page,
-                size: size
+                size: size,
+                orderBy: x => x.OrderBy(x => x.Code)
             );
         return (responses != null) ? _mapper.Map<IPaginate<RentalLocationResponse>>(responses) : null;
     }

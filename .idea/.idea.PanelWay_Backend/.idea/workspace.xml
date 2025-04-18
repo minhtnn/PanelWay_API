@@ -10,30 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d416360-72f2-4155-8347-9a955e9ac23a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Responses/Accounts/ManageAccountResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PanelWay_Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PanelWay_Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Constants/ApiEndpointConstant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Constants/ApiEndpointConstant.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Constants/SystemConstant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Constants/SystemConstant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Configurations/CorsConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Configurations/CorsConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/AppointmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/AppointmentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/AuthenticationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/RentalLocationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/RentalLocationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/UserSubscriptionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/UserSubscriptionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/PayOS/CreatePayOSRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/PayOS/CreatePayOSRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/RentalLocations/CreateRentalLocationRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/RentalLocations/CreateRentalLocationRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/RentalLocations/UpdateRentalLocationRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Requests/RentalLocations/UpdateRentalLocationRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Responses/RentalLocations/RentalLocationResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Responses/RentalLocations/RentalLocationResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Responses/Subscriptions/SubscriptionResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Payload/Responses/Subscriptions/SubscriptionResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Extensions/DependencyServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Extensions/DependencyServices.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AppointmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AppointmentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AuthenticationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/AuthenticationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/PayOSService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/PayOSService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/InfobipService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/InfobipService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/RentalLocationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/RentalLocationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/UserSubscriptionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/UserSubscriptionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IAccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IAccountService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IAppointmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IAppointmentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IRentalLocationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IRentalLocationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IUserSubscriptionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IUserSubscriptionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Implements/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/Services/Interfaces/IUserService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/bin/Debug/net8.0/PanelWay_Backend.API.exe" afterDir="false" />
@@ -54,7 +40,6 @@
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Debug/net8.0/PanelWay_Backend.API.sourcelink.json" afterDir="false" />
@@ -64,7 +49,6 @@
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/PanelWay_Backend.API.sourcelink.json" afterDir="false" />
@@ -73,7 +57,6 @@
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/refint/PanelWay_Backend.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/Release/net8.0/win-x64/refint/PanelWay_Backend.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.API/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/PanelWayDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/Entities/PanelWayDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Debug/net8.0/PanelWay_Backend.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Release/net8.0/PanelWay_Backend.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PanelWay_Backend.Domain/bin/Release/net8.0/PanelWay_Backend.Domain.dll" afterDir="false" />
@@ -161,59 +144,65 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.PanelWay_Backend.API: http.executor": "Run",
-    ".NET Launch Settings Profile.PanelWay_Backend.API: https.executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (1).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (10).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (11).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (12).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (13).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (14).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (15).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (16).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (17).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (18).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (19).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (2).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (20).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (21).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (22).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (23).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (24).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (25).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (26).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (27).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (28).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (29).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (3).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (30).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (4).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (5).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (6).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (7).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (8).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder (9).executor": "Run",
-    "Publish to folder.Publish PanelWay_Backend to folder.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.6100629",
-    "git-widget-placeholder": "11__02__2025",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.PanelWay_Backend.API: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.PanelWay_Backend.API: https.executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (1).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (10).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (11).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (12).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (13).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (14).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (15).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (16).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (17).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (18).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (19).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (2).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (20).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (21).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (22).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (23).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (24).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (25).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (26).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (27).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (28).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (29).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (3).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (30).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (31).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (32).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (33).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (34).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (35).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (36).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (4).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (5).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (6).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (7).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (8).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder (9).executor&quot;: &quot;Run&quot;,
+    &quot;Publish to folder.Publish PanelWay_Backend to folder.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.6100629&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;07__04__2025&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\N.Minh- ADMIN\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\N.Minh- ADMIN\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\N.Minh- ADMIN\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\N.Minh- ADMIN\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\N.Minh- ADMIN\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\N.Minh- ADMIN\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.PanelWay_Backend.API: https">
     <configuration name="Publish PanelWay_Backend to folder (10)" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$PROJECT_DIR$/PanelWay_Backend.API/bin/Release/net8.0/win-x64/publish/Public" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
@@ -304,6 +293,30 @@
       <method v="2" />
     </configuration>
     <configuration name="Publish PanelWay_Backend to folder (30)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$USER_HOME$/Downloads/PanelWayPublish/staging" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (31)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$USER_HOME$/Downloads/PanelWayPublish/staging" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (32)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$USER_HOME$/Downloads/PanelWayPublish/staging" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (33)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$USER_HOME$/Downloads/PanelWayPublish/staging" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (34)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$USER_HOME$/Downloads/PanelWayPublish/staging" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (35)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$USER_HOME$/Downloads/PanelWayPublish/staging" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PanelWay_Backend to folder (36)" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" platform="Any CPU" runtime="win-x64" target_folder="$USER_HOME$/Downloads/PanelWayPublish/staging" target_framework="net8.0" uuid_high="3545492451530197181" uuid_low="-4959191963317058560" />
       <method v="2" />
     </configuration>
@@ -494,7 +507,11 @@
       <workItem from="1743945314346" duration="728000" />
       <workItem from="1743953700064" duration="4815000" />
       <workItem from="1743984070931" duration="8566000" />
-      <workItem from="1744021299380" duration="375000" />
+      <workItem from="1744021299380" duration="668000" />
+      <workItem from="1744036289808" duration="2421000" />
+      <workItem from="1744057105496" duration="261000" />
+      <workItem from="1744071178121" duration="412000" />
+      <workItem from="1744716641914" duration="1000" />
     </task>
     <servers />
   </component>

@@ -25,7 +25,7 @@ public class AccountController : BaseController<AccountController>
         return (response != null)? Ok(response) : NotFound(new {Message = MessageConstant.Account.NotFindAccount});
     }
     
-    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.Account.FindAccountByIdApiEndpoint)]
     [ProducesResponseType(typeof(AccountResponse), StatusCodes.Status200OK)] 
     public async Task<IActionResult> GetAccountById(Guid id) 

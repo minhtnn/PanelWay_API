@@ -35,7 +35,8 @@ public class AccountService : BaseService<AccountService>, IAccountService
     {
         var response = await _unitOfWork.GetRepository<Account>().SingleOrDefaultAsync
             (
-                predicate: x => x.Id.Equals(id)
+                predicate: x => x.Id.Equals(id),
+                include: x => x.Include(x => x.User)
                 );
         return (response != null)? _mapper.Map<AccountResponse>(response) : null;
     }

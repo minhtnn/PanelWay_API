@@ -4,6 +4,7 @@ using PanelWay_Backend.API.Enums;
 using PanelWay_Backend.API.Payload.Responses.Users;
 using PanelWay_Backend.API.Services.Interfaces;
 using PanelWay_Backend.API.Validators;
+using PanelWay_Backend.Domain.Paginate;
 
 namespace PanelWay_Backend.API.Controllers;
 
@@ -13,6 +14,15 @@ public class UserController : BaseController<UserController>
     public UserController(ILogger<UserController> logger, IUserService userService) : base(logger)
     {
         _userService = userService;
+    }
+    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
+    [HttpGet(ApiEndpointConstant.User.UserApiEndpoint)]
+    [ProducesResponseType(typeof(IPaginate<UserResponse>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetUsers( [FromQuery] int page = 1, [FromQuery] int size = 10)
+    {
+        var responses = await _userService.GetUsers(page,size);
+        return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.User.NotFindUser});
     }
     
     [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]

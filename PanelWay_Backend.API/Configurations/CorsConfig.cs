@@ -3,4 +3,5 @@
 public static class CorsConfig
 {
     public const string PolicyName = "MyDefaultPolicy"; 
+    
 }

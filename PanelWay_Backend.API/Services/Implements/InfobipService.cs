@@ -11,7 +11,7 @@ namespace PanelWay_Backend.API.Services.Implements;
 public class InfobipService : BaseService<InfobipService>,IInfobipService
 {
     private readonly string _apiKey;
-    private readonly string _baseUrl = "https://ypjevp.api.infobip.com"; 
+    private readonly string _baseUrl = "https://lqevq5.api.infobip.com"; 
     private readonly string _sender; 
     private readonly IMemoryCache _cache;
     public InfobipService(IUnitOfWork<PanelWayDbContext> unitOfWork, ILogger<InfobipService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor, IConfiguration configuration, IMemoryCache cache) : base(unitOfWork, logger, mapper, httpContextAccessor)

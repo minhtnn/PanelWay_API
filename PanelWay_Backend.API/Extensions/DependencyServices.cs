@@ -38,7 +38,7 @@ public static class DependencyServices
            options.AddPolicy(name: CorsConfig.PolicyName,
                policy =>
                { 
-                   policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                   policy.WithOrigins("http://localhost:5173", "https://webadmin.panelway.online").AllowAnyHeader().AllowAnyMethod().AllowCredentials();
                });
         });
         return services;
