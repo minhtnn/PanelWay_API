@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using PanelWay_Backend.API.Constants;
 using PanelWay_Backend.API.Enums;
 using PanelWay_Backend.API.Payload.Requests.Appointments;
@@ -26,6 +27,32 @@ public class AppointmentService : BaseService<AppointmentService>, IAppointmentS
             predicate: x => x.Id.Equals(id)
         );
         return (response != null) ? _mapper.Map<AppointmentResponse>(response) : null;
+    }
+    
+    public async Task<ICollection<AppointmentResponse>?> GetAppointmentByAccountId(Guid id, string role, DateTime? bookDate)
+    {
+        ICollection<Appointment>? response = null;
+        if (role.Equals(nameof(RoleEnum.AdvertisingClient)))
+        {
+            response = await _unitOfWork.GetRepository<Appointment>().GetListAsync
+            (
+                include: x => x.Include(x => x.AdContent),
+                predicate: x => x.AdContent.AdvertisingClientId.Equals(id) 
+                                && (bookDate == null || x.BookingDate.Value.Date.Equals(bookDate.Value.Date)),
+                orderBy: x => x.OrderByDescending(x => x.BookingDate)
+            );
+        }
+        else if (role.Equals(nameof(RoleEnum.SpaceProvider)))
+        {
+            response = await _unitOfWork.GetRepository<Appointment>().GetListAsync
+            (
+                predicate: x => x.RentalLocation.SpaceProviderId.Equals(id),
+                include: x => x.Include(x => x.RentalLocation),
+                orderBy: x => x.OrderByDescending(x => x.BookingDate)
+            );
+        }
+        
+        return (response != null) ? _mapper.Map<ICollection<AppointmentResponse>>(response) : null;
     }
 
     public async Task<DateTime?> GetIsNearestBookingDate()
@@ -91,7 +118,7 @@ public class AppointmentService : BaseService<AppointmentService>, IAppointmentS
         //Check if rental location already has 5 appointments
         var appointments = await _unitOfWork.GetRepository<Appointment>().GetListAsync
         (
-            predicate: x => x.RentalLocationId.Equals(request.RentalLocationId)
+            predicate: x => x.RentalLocationId.Equals(request.RentalLocationId) && !(x.Status.Equals(nameof(AppointmentStatusEnum.Expired)))
         );
         if (appointments.Count >= 5) throw new BadHttpRequestException(MessageConstant.Appointment.ExceedAppointment);
         //Check new Guid exists in DB
@@ -139,7 +166,7 @@ public class AppointmentService : BaseService<AppointmentService>, IAppointmentS
             predicate: x => x.Id.Equals(request.Id) && x.Code.Equals(request.Code)
         );
         if (appointment == null) throw new BadHttpRequestException(MessageConstant.AdContent.NotFindAdContent);
-        var updateAppointment = _mapper.Map<Appointment>(request);
+        var updateAppointment = _mapper.Map<Appointment>(request );
         updateAppointment.AdContentId = appointment.AdContentId;
         updateAppointment.RentalLocationId = appointment.RentalLocationId;
         _unitOfWork.GetRepository<Appointment>().UpdateAsync(updateAppointment);

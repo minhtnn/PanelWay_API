@@ -1,7 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PanelWay_Backend.API.Constants;
+using PanelWay_Backend.API.Enums;
+using PanelWay_Backend.API.Payload.Requests.RentalLocations;
 using PanelWay_Backend.API.Payload.Responses.RentalLocations;
 using PanelWay_Backend.API.Services.Interfaces;
+using PanelWay_Backend.API.Validators;
+using PanelWay_Backend.Domain.Paginate;
 
 namespace PanelWay_Backend.API.Controllers;
 
@@ -13,19 +17,66 @@ public class RentalLocationController : BaseController<RentalLocationController>
         _rentalLocationService = rentalLocationService;
     }
 
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.RentalLocation.RentalLocationApiEndpoint)]
+    [ProducesResponseType(typeof(IPaginate<RentalLocationResponse>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetRentalLocations(int page = 1, int size = 10)
+    {
+        var responses = await _rentalLocationService.GetRentalLocationListPaging(page, size);
+        return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.PanelWaySystem.SystemError});
+    }
+    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
+    [HttpGet(ApiEndpointConstant.RentalLocation.RentalLocationLatLngApiEndpoint)]
     [ProducesResponseType(typeof(ICollection<RentalLocationResponse>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetRentalLocations([FromQuery] double minLat, 
         [FromQuery] double minLng, [FromQuery] double maxLat, [FromQuery] double maxLng)
     {
-        var responses = await _rentalLocationService.GetRentalLocationListPaging(minLat, minLng, maxLat, maxLng);
+        var responses = await _rentalLocationService.GetRentalLocationListByLatLng(minLat, minLng, maxLat, maxLng);
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.PanelWaySystem.SystemError});
     }
+    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
+    [HttpGet(ApiEndpointConstant.RentalLocation.FindRentalLocationBySpaceProviderdApiEndpoint)]
+    [ProducesResponseType(typeof(ICollection<RentalLocationResponse>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetRentalLocationBySpaceProviderId(Guid id, string? status)
+    {
+        var responses = await _rentalLocationService.GetRentalLocationBySpaceProviderId(id, status);
+        return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.PanelWaySystem.SystemError});
+    }
+    
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.RentalLocation.FindRentalLocationByIdApiEndpoint)]
     [ProducesResponseType(typeof(RentalLocationResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetRentalLocationById(Guid id)
     {
         var responses = await _rentalLocationService.GetRentalLocationById(id);
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.RentalLocationPanelType.NotFindRentalLocationPanelType});
+    }
+
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager)]
+    [HttpGet(ApiEndpointConstant.RentalLocation.RentalLocationTotalApiEndpoint)]
+    [ProducesResponseType(typeof(RentalLocationResponse), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetRentalLocationTotal()
+    {
+        var response = await _rentalLocationService.GetTotalRentalLocation();
+        return (response != null) ? Ok(response) : NotFound(new {Message = MessageConstant.PanelWaySystem.SystemError});
+    }
+
+    [CustomAuthorize(RoleEnum.SpaceProvider)]
+    [HttpPost(ApiEndpointConstant.RentalLocation.RentalLocationApiEndpoint)]
+    [ProducesResponseType(typeof(RentalLocationResponse), StatusCodes.Status200OK)]
+    public async Task<IActionResult> CreateRentalLocation(CreateRentalLocationRequest request)
+    {
+        var response = await _rentalLocationService.CreateRentalLocation(request);
+        return (response != null) ? Ok(response) : NotFound(new {Message = MessageConstant.RentalLocation.CreateRentalLocationFail});
+    }
+    [CustomAuthorize(RoleEnum.SpaceProvider)]
+    [HttpPatch(ApiEndpointConstant.RentalLocation.RentalLocationApiEndpoint)]
+    [ProducesResponseType(typeof(RentalLocationResponse), StatusCodes.Status200OK)]
+    public async Task<IActionResult> UpdateRentalLocation(UpdateRentalLocationRequest request)
+    {
+        var response = await _rentalLocationService.UpdateRentalLocation(request);
+        return (response != null) ? Ok(response) : NotFound(new {Message = MessageConstant.RentalLocation.UpdateRentalLocationFail});
     }
 }

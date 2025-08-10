@@ -3,5 +3,6 @@
 public enum RentalLocationStatusEnum
 {
     Available,
+    Draft,
     Unavailable
 }

@@ -17,7 +17,9 @@ public partial class Subscription
 
     public string? Status { get; set; }
 
-    public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+    public int? Duration { get; set; }
+
+    public int? Priority { get; set; }
 
     public virtual ICollection<UserSubscription> UserSubscriptions { get; set; } = new List<UserSubscription>();
 }

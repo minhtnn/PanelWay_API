@@ -11,9 +11,9 @@ public static class ApiEndpointConstant
         public const string AuthenticationEndpoint = ApiEndpoint + "/auth";
         public const string Login = AuthenticationEndpoint + "/login";
         public const string SignUp = AuthenticationEndpoint + "/sign-up";
+        public const string SignUpUltra = AuthenticationEndpoint + "/users/sign-up";
         public const string UpdatePassword = AuthenticationEndpoint + "/change-pass";
     }
-    
     public static class Account
     {
         private const string AccountEndpoint = "/accounts";
@@ -32,6 +32,7 @@ public static class ApiEndpointConstant
     {
         private const string AppointmentEndpoint = "/appointments";
         public const string AppointmentApiEndpoint = ApiEndpoint + AppointmentEndpoint;
+        public const string AppointmentByAccountIdApiEndpoint = AppointmentApiEndpoint + "/account/{id}";
         public const string FindAppointmentByIdApiEndpoint = AppointmentApiEndpoint + "/{id}";
         public const string FindAppointmentByRentalLocationIdApiEndpoint = AppointmentApiEndpoint + "/rental-location/{id}";
     }
@@ -42,17 +43,41 @@ public static class ApiEndpointConstant
         public const string FindAppointmentHistoryByIdApiEndpoint = AppointmentHistoryApiEndpoint + "/{id}";
         public const string FindAppointmentHistoryByAppointmentIdApiEndpoint = AppointmentHistoryApiEndpoint + "/appointment/{id}";
     }
+    public static class Firebase
+    {
+        private const string FirebaseEndpoint = "/firebase";
+        public const string FirebaseUploadApiEndpoint = ApiEndpoint + FirebaseEndpoint + "/upload";
+        public const string FirebaseDownload = ApiEndpoint + FirebaseEndpoint + "/download";
+        public const string FirebaseVerifyToken = ApiEndpoint + FirebaseEndpoint + "/verify-token";
+        public const string FirebaseSaveUser = ApiEndpoint + FirebaseEndpoint + "/save-user";
+        public const string FirebaseGetUser = ApiEndpoint + FirebaseEndpoint + "/user/{id}";
+    }
+    public static class Otp
+    {
+        private const string OtpEndpoint = "/otp";
+        public const string OtpSendSmsApiEndpoint = ApiEndpoint + OtpEndpoint + "/sms";
+        public const string OtpSmsVerifyApiEndpoint = ApiEndpoint + OtpEndpoint + "/sms-verify";
+    }
     public static class PanelType
     {
         private const string PanelTypeEndpoint = "/panel-types";
         public const string PanelTypeApiEndpoint = ApiEndpoint + PanelTypeEndpoint;
-        public const string FindAppointmentByIdApiEndpoint = PanelTypeApiEndpoint + "/{id}";
+        public const string FindPanelTypeByIdApiEndpoint = PanelTypeApiEndpoint + "/{id}";
     }
     public static class Payment
     {
         private const string PaymentEndpoint = "/payments";
         public const string PaymentApiEndpoint = ApiEndpoint + PaymentEndpoint;
         public const string FindPaymentByIdApiEndpoint = PaymentApiEndpoint + "/{id}";
+        
+    }
+    public static class PayOs
+    {
+        private const string PayOsEndPoint = "/payos";
+        public const string PayOsApiEndpoint = ApiEndpoint + PayOsEndPoint;
+        public const string CreateQrApiEndpoint = PayOsApiEndpoint + "/create-qr";
+        public const string FindPayOSByOrderIdApiEndpoint = PayOsApiEndpoint + "/{orderId}";
+        public const string CancelPayOSByOrderIdApiEndpoint = PayOsApiEndpoint + "/{orderId}/cancel";
     }
     public static class PaymentType
     {
@@ -78,7 +103,17 @@ public static class ApiEndpointConstant
     {
         private const string RentalLocationEndpoint = "/rental-locations";
         public const string RentalLocationApiEndpoint = ApiEndpoint + RentalLocationEndpoint;
+        public const string RentalLocationLatLngApiEndpoint = RentalLocationApiEndpoint + "/latitude-longitude";
+        public const string FindRentalLocationBySpaceProviderdApiEndpoint = RentalLocationApiEndpoint + "/space-provider/{id}";
         public const string FindRentalLocationByIdApiEndpoint = RentalLocationApiEndpoint + "/{id}";
+        public const string RentalLocationTotalApiEndpoint = RentalLocationEndpoint + "/count";
+
+    }
+    public static class RentalLocationImage
+    {
+        private const string RentalLocationImageEndpoint = "/rental-location-images";
+        public const string RentalLocationImageApiEndpoint = ApiEndpoint + RentalLocationImageEndpoint;
+        public const string FindImageByRentalLocationIdApiEndpoint = RentalLocationImageApiEndpoint + "/rental-location/{id}";
     }
     public static class RentalLocationPanelType
     {
@@ -99,12 +134,16 @@ public static class ApiEndpointConstant
         public const string FindTransactionByIdApiEndpoint = TransactionApiEndpoint + "/{id}";
         public const string FindTransactionByAccountIdApiEndpoint = TransactionApiEndpoint + "/account/{id}";
         public const string FindTransactionByUserSubscriptionIdAndPaymentIdApiEndpoint = TransactionApiEndpoint + "/user-subscription/{userSubscriptionId}/payment/{paymentId}";
+        public const string TotalRevenue = TransactionApiEndpoint + "/total-revenue";
     }
     public static class User
     {
         private const string UserEndpoint = "/users";
         public const string UserApiEndpoint = ApiEndpoint + UserEndpoint;
         public const string FindUserByIdApiEndpoint = UserApiEndpoint + "/{id}";
+        public const string UserTotalApiEndpoint = UserApiEndpoint + "/count";
+        public const string UserTotalByDateApiEndpoint = UserApiEndpoint + "/date-count";
+        public const string UserTotalByAgeApiEndpoint = UserApiEndpoint + "/age-count";
     }
     public static class UserSubscription
     {
@@ -112,5 +151,7 @@ public static class ApiEndpointConstant
         public const string UserSubscriptionApiEndpoint = ApiEndpoint + UserSubscriptionEndpoint;
         public const string FindUserSubscriptionByIdApiEndpoint = UserSubscriptionApiEndpoint + "/{id}";
         public const string FindUserSubscriptionByAccountIdApiEndpoint = UserSubscriptionApiEndpoint + "/account/{id}";
+        public const string FindUserSubscriptionBySubscriptionIdApiEndpoint = UserSubscriptionApiEndpoint + "/subcription/{id}";
+        public const string PurchasingVolumeApiEndpoint = UserSubscriptionApiEndpoint + "/purchasing-volume";
     }
 }

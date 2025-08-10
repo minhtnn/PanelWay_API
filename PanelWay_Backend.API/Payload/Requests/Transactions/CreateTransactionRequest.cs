@@ -13,6 +13,7 @@ public class CreateTransactionRequest
     public double? Amount { get; set; }
 
     public DateTime? TransactionDate { get; set; }
+    public int Duration { get; set; }
 
     public string? Status { get; set; }
 }

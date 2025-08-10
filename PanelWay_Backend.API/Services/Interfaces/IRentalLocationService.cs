@@ -6,8 +6,11 @@ namespace PanelWay_Backend.API.Services.Interfaces;
 
 public interface IRentalLocationService
 {
-    Task<ICollection<RentalLocationResponse>?> GetRentalLocationListPaging(double minLat, double minLng, double maxLat, double maxLng);
+    Task<IPaginate<RentalLocationResponse>?> GetRentalLocationListPaging(int page, int size);
+    Task<ICollection<RentalLocationResponse>?> GetRentalLocationListByLatLng(double minLat, double minLng, double maxLat, double maxLng);
     Task<RentalLocationResponse> GetRentalLocationById(Guid id);
-    Task<RentalLocationResponse> CreateRentalLocation(CreateRentalLocationRequest request);
-    Task<RentalLocationResponse> UpdateRentalLocation(UpdateRentalLocationRequest request);
+    Task<ICollection<RentalLocationResponse>> GetRentalLocationBySpaceProviderId(Guid id, string? status);
+    Task<int> GetTotalRentalLocation();
+    Task<RentalLocationResponse?> CreateRentalLocation(CreateRentalLocationRequest request);
+    Task<RentalLocationResponse?> UpdateRentalLocation(UpdateRentalLocationRequest request);
 }

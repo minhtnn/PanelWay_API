@@ -134,5 +134,26 @@ namespace PanelWay_Backend.Repository.Implement
 		}
 
 		#endregion
+
+		#region MyRegion
+		public int Count(Expression<Func<T, bool>> predicate = null)
+		{
+			IQueryable<T> query = _dbSet;
+
+			if (predicate != null)
+				return query.Count(predicate);
+
+			return query.Count();
+		}
+		public async Task<int> CountAsync(Expression<Func<T, bool>> predicate = null)
+		{
+			IQueryable<T> query = _dbSet;
+
+			if (predicate != null)
+				return await query.CountAsync(predicate);
+
+			return await query.CountAsync();
+		}
+		#endregion
 	}
 }

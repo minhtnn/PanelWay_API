@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace PanelWay_Backend.Domain.Entities;
 
@@ -35,6 +36,8 @@ public partial class PanelWayDbContext : DbContext
 
     public virtual DbSet<RentalLocation> RentalLocations { get; set; }
 
+    public virtual DbSet<RentalLocationImage> RentalLocationImages { get; set; }
+
     public virtual DbSet<RentalLocationPanelType> RentalLocationPanelTypes { get; set; }
 
     public virtual DbSet<Subscription> Subscriptions { get; set; }
@@ -47,13 +50,23 @@ public partial class PanelWayDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("server =(local);database=PanelWayDB;uid=sa;pwd=123456;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer(GetConnectionString());
 
+    private string GetConnectionString()
+    {
+        IConfiguration configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", true, true).Build();
+        return configuration["ConnectionStrings:" 
+                              + "DefaultConnectionString"
+                             // + "PanelWaySystemDatabase"
+        ];
+    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Account>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Accounts__3214EC07AA89F69E");
+            entity.HasKey(e => e.Id).HasName("PK__Accounts__3214EC079BE7BB3F");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.AvatarUrl)
@@ -64,12 +77,12 @@ public partial class PanelWayDbContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.Accounts)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Accounts__UserId__52CE3E04");
+                .HasConstraintName("FK__Accounts__UserId__398D8EEE");
         });
 
         modelBuilder.Entity<AdContent>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__AdConten__3214EC0770C81C9D");
+            entity.HasKey(e => e.Id).HasName("PK__AdConten__3214EC07A8C00260");
 
             entity.ToTable("AdContent");
 
@@ -79,12 +92,12 @@ public partial class PanelWayDbContext : DbContext
 
             entity.HasOne(d => d.AdvertisingClient).WithMany(p => p.AdContents)
                 .HasForeignKey(d => d.AdvertisingClientId)
-                .HasConstraintName("FK__AdContent__Adver__6E765879");
+                .HasConstraintName("FK__AdContent__Adver__5629CD9C");
         });
 
         modelBuilder.Entity<Appointment>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Appointm__3214EC07634D0A97");
+            entity.HasKey(e => e.Id).HasName("PK__Appointm__3214EC0793E7C38E");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.BookingDate).HasColumnType("datetime");
@@ -92,16 +105,16 @@ public partial class PanelWayDbContext : DbContext
 
             entity.HasOne(d => d.AdContent).WithMany(p => p.Appointments)
                 .HasForeignKey(d => d.AdContentId)
-                .HasConstraintName("FK__Appointme__AdCon__7152C524");
+                .HasConstraintName("FK__Appointme__AdCon__59063A47");
 
             entity.HasOne(d => d.RentalLocation).WithMany(p => p.Appointments)
                 .HasForeignKey(d => d.RentalLocationId)
-                .HasConstraintName("FK__Appointme__Renta__7246E95D");
+                .HasConstraintName("FK__Appointme__Renta__59FA5E80");
         });
 
         modelBuilder.Entity<AppointmentHistory>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Appointm__3214EC076D1ECC5F");
+            entity.HasKey(e => e.Id).HasName("PK__Appointm__3214EC07D31E58B7");
 
             entity.ToTable("AppointmentHistory");
 
@@ -110,20 +123,20 @@ public partial class PanelWayDbContext : DbContext
 
             entity.HasOne(d => d.AdvertisingClient).WithMany(p => p.AppointmentHistoryAdvertisingClients)
                 .HasForeignKey(d => d.AdvertisingClientId)
-                .HasConstraintName("FK__Appointme__Adver__75235608");
+                .HasConstraintName("FK__Appointme__Adver__5CD6CB2B");
 
             entity.HasOne(d => d.Appointment).WithMany(p => p.AppointmentHistories)
                 .HasForeignKey(d => d.AppointmentId)
-                .HasConstraintName("FK__Appointme__Appoi__770B9E7A");
+                .HasConstraintName("FK__Appointme__Appoi__5EBF139D");
 
             entity.HasOne(d => d.SpaceProvider).WithMany(p => p.AppointmentHistorySpaceProviders)
                 .HasForeignKey(d => d.SpaceProviderId)
-                .HasConstraintName("FK__Appointme__Space__76177A41");
+                .HasConstraintName("FK__Appointme__Space__5DCAEF64");
         });
 
         modelBuilder.Entity<PanelType>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PanelTyp__3214EC07C762F55C");
+            entity.HasKey(e => e.Id).HasName("PK__PanelTyp__3214EC0726AC7AF7");
 
             entity.ToTable("PanelType");
 
@@ -133,7 +146,7 @@ public partial class PanelWayDbContext : DbContext
 
         modelBuilder.Entity<Payment>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Payments__3214EC07AF83AE3D");
+            entity.HasKey(e => e.Id).HasName("PK__Payments__3214EC07AD9BC1E1");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.CreatedAt).HasColumnType("datetime");
@@ -142,23 +155,26 @@ public partial class PanelWayDbContext : DbContext
 
             entity.HasOne(d => d.PaymentType).WithMany(p => p.Payments)
                 .HasForeignKey(d => d.PaymentTypeId)
-                .HasConstraintName("FK__Payments__Paymen__5D4BCC77");
+                .HasConstraintName("FK__Payments__Paymen__440B1D61");
         });
 
         modelBuilder.Entity<PaymentType>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PaymentT__3214EC07C7A69BF4");
+            entity.HasKey(e => e.Id).HasName("PK__PaymentT__3214EC076B40AA15");
 
             entity.ToTable("PaymentType");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Code)
+                .HasMaxLength(20)
+                .IsUnicode(false);
             entity.Property(e => e.Description).HasColumnType("ntext");
             entity.Property(e => e.ImgUrl).IsUnicode(false);
         });
 
         modelBuilder.Entity<RegulatoryApproval>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Regulato__3214EC076C6981D7");
+            entity.HasKey(e => e.Id).HasName("PK__Regulato__3214EC074D860601");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.ExpirationDate).HasColumnType("datetime");
@@ -167,24 +183,24 @@ public partial class PanelWayDbContext : DbContext
 
             entity.HasOne(d => d.RentalLocation).WithMany(p => p.RegulatoryApprovals)
                 .HasForeignKey(d => d.RentalLocationId)
-                .HasConstraintName("FK__Regulator__Renta__79E80B25");
+                .HasConstraintName("FK__Regulator__Renta__619B8048");
         });
 
         modelBuilder.Entity<RegulatoryLicense>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Regulato__3214EC07872BBB59");
+            entity.HasKey(e => e.Id).HasName("PK__Regulato__3214EC07428A2E70");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.ImgUrl).IsUnicode(false);
 
             entity.HasOne(d => d.RegulatoryApproval).WithMany(p => p.RegulatoryLicenses)
                 .HasForeignKey(d => d.RegulatoryApprovalId)
-                .HasConstraintName("FK__Regulator__Regul__7CC477D0");
+                .HasConstraintName("FK__Regulator__Regul__6477ECF3");
         });
 
         modelBuilder.Entity<RentalLocation>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__RentalLo__3214EC07490E6D54");
+            entity.HasKey(e => e.Id).HasName("PK__RentalLo__3214EC0739F13F1C");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.AvailableDate).HasColumnType("datetime");
@@ -194,31 +210,42 @@ public partial class PanelWayDbContext : DbContext
 
             entity.HasOne(d => d.Manager).WithMany(p => p.RentalLocationManagers)
                 .HasForeignKey(d => d.ManagerId)
-                .HasConstraintName("FK__RentalLoc__Manag__67C95AEA");
+                .HasConstraintName("FK__RentalLoc__Manag__4CA06362");
 
             entity.HasOne(d => d.SpaceProvider).WithMany(p => p.RentalLocationSpaceProviders)
                 .HasForeignKey(d => d.SpaceProviderId)
-                .HasConstraintName("FK__RentalLoc__Space__66D536B1");
+                .HasConstraintName("FK__RentalLoc__Space__4BAC3F29");
+        });
+
+        modelBuilder.Entity<RentalLocationImage>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__RentalLo__3214EC07019EAE98");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+
+            entity.HasOne(d => d.RentalLocation).WithMany(p => p.RentalLocationImages)
+                .HasForeignKey(d => d.RentalLocationId)
+                .HasConstraintName("FK__RentalLoc__Renta__4F7CD00D");
         });
 
         modelBuilder.Entity<RentalLocationPanelType>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__RentalLo__3214EC0738687073");
+            entity.HasKey(e => e.Id).HasName("PK__RentalLo__3214EC07F75627D8");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
 
             entity.HasOne(d => d.PanelType).WithMany(p => p.RentalLocationPanelTypes)
                 .HasForeignKey(d => d.PanelTypeId)
-                .HasConstraintName("FK__RentalLoc__Panel__6B99EBCE");
+                .HasConstraintName("FK__RentalLoc__Panel__534D60F1");
 
             entity.HasOne(d => d.RentalLocation).WithMany(p => p.RentalLocationPanelTypes)
                 .HasForeignKey(d => d.RentalLocationId)
-                .HasConstraintName("FK__RentalLoc__Renta__6AA5C795");
+                .HasConstraintName("FK__RentalLoc__Renta__52593CB8");
         });
 
         modelBuilder.Entity<Subscription>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Subscrip__3214EC070C789890");
+            entity.HasKey(e => e.Id).HasName("PK__Subscrip__3214EC07DD41B4C4");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Code).IsUnicode(false);
@@ -228,7 +255,7 @@ public partial class PanelWayDbContext : DbContext
 
         modelBuilder.Entity<Transaction>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Transact__3214EC07F2A11F81");
+            entity.HasKey(e => e.Id).HasName("PK__Transact__3214EC0794B2AF22");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Status).IsUnicode(false);
@@ -236,20 +263,12 @@ public partial class PanelWayDbContext : DbContext
 
             entity.HasOne(d => d.Payment).WithMany(p => p.Transactions)
                 .HasForeignKey(d => d.PaymentId)
-                .HasConstraintName("FK__Transacti__Payme__62108194");
-
-            entity.HasOne(d => d.Subscription).WithMany(p => p.Transactions)
-                .HasForeignKey(d => d.SubscriptionId)
-                .HasConstraintName("FK__Transacti__Subsc__60283922");
-
-            entity.HasOne(d => d.UserSubscription).WithMany(p => p.Transactions)
-                .HasForeignKey(d => d.UserSubscriptionId)
-                .HasConstraintName("FK__Transacti__UserS__611C5D5B");
+                .HasConstraintName("FK__Transacti__Payme__46E78A0C");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC072CB4D312");
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07F23C923F");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.CreatedAt).HasColumnType("datetime");
@@ -261,7 +280,7 @@ public partial class PanelWayDbContext : DbContext
 
         modelBuilder.Entity<UserSubscription>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__UserSubs__3214EC07755B1C9B");
+            entity.HasKey(e => e.Id).HasName("PK__UserSubs__3214EC079DD11609");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.EndDate).HasColumnType("datetime");
@@ -270,11 +289,11 @@ public partial class PanelWayDbContext : DbContext
 
             entity.HasOne(d => d.Account).WithMany(p => p.UserSubscriptions)
                 .HasForeignKey(d => d.AccountId)
-                .HasConstraintName("FK__UserSubsc__Accou__5792F321");
+                .HasConstraintName("FK__UserSubsc__Accou__3E52440B");
 
             entity.HasOne(d => d.Subscription).WithMany(p => p.UserSubscriptions)
                 .HasForeignKey(d => d.SubscriptionId)
-                .HasConstraintName("FK__UserSubsc__Subsc__5887175A");
+                .HasConstraintName("FK__UserSubsc__Subsc__3F466844");
         });
 
         OnModelCreatingPartial(modelBuilder);

@@ -9,7 +9,7 @@ public partial class Transaction
 
     public Guid? SubscriptionId { get; set; }
 
-    public Guid? UserSubscriptionId { get; set; }
+    public Guid? AccountId { get; set; }
 
     public Guid? PaymentId { get; set; }
 
@@ -20,8 +20,4 @@ public partial class Transaction
     public string? Status { get; set; }
 
     public virtual Payment? Payment { get; set; }
-
-    public virtual Subscription? Subscription { get; set; }
-
-    public virtual UserSubscription? UserSubscription { get; set; }
 }

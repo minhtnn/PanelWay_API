@@ -22,7 +22,7 @@ public class PanelTypeController:BaseController<PanelTypeController>
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.PanelWaySystem.SystemError});
     }
     
-    [HttpGet(ApiEndpointConstant.PanelType.FindAppointmentByIdApiEndpoint)]
+    [HttpGet(ApiEndpointConstant.PanelType.FindPanelTypeByIdApiEndpoint)]
     [ProducesResponseType(typeof(PanelTypeResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPanelTypeById(Guid id)
     {

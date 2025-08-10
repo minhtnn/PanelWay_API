@@ -6,9 +6,9 @@ public class RentalLocationResponse
 
     public string? Code { get; set; }
 
-    public double? LocationX { get; set; }
+    public double? Latitude { get; set; }
 
-    public double? LocationY { get; set; }
+    public double? Longitude { get; set; }
 
     public string? Address { get; set; }
 

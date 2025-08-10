@@ -13,4 +13,6 @@ public class SubscriptionResponse
     public string? Features { get; set; }
 
     public string? Status { get; set; }
+    public int Duration { get; set; }
+    public int? Priority { get; set; }
 }

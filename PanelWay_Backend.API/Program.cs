@@ -1,4 +1,5 @@
 using Microsoft.OpenApi.Models;
+using PanelWay_Backend.API.Configurations;
 using PanelWay_Backend.API.Constants;
 using PanelWay_Backend.API.Extensions;
 
@@ -10,33 +11,31 @@ try
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
-    
+    builder.Services.AddMyCors();
     builder.Services.AddDatabase();
     builder.Services.AddUnitOfWork();
     builder.Services.AddControllers();
     builder.Services.AddHttpContextAccessor();
     builder.Services.AddServices(builder.Configuration);
+    builder.Services.AddMemoryCacheConfig();
     builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
     builder.Services.AddAutoMapperConfig(builder.Configuration);
+    builder.Services.AddFirebase(FirebaseConfig.CredentialFilePath!);
+    builder.Services.AddConfigSwagger();
+    builder.Services.AddJwtValidation();
     builder.Services.AddBackgroundJobService();
-    builder.Services.AddCors(options =>
-    {
-        options.AddPolicy(name: CorsConstant.PolicyName,
-            policy =>
-            { 
-                policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-            });
-    });
+    builder.Services.AddMemoryCache();
     var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-    if (app.Environment.IsDevelopment())
+    if (app.Environment.IsDevelopment() || app.Environment.IsProduction() || app.Environment.IsStaging())
     {
         app.UseDeveloperExceptionPage();
         app.UseSwagger();
         app.UseSwaggerUI();
     }
     app.UseRouting();
+    app.UseCors(CorsConfig.PolicyName);
     app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();
@@ -44,7 +43,6 @@ try
     {
         endpoints.MapControllers();
     });
-    app.UseCors(CorsConstant.PolicyName);
     app.Run();
 }
 catch(Exception e)

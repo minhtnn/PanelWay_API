@@ -60,6 +60,14 @@ public static class MessageConstant
         public const string CreateAppointmentHistoryFail = "Tạo Appointment history thất bại";
         public const string UpdateAppointmentHistoryFail  = "Cập nhật Appointment history thất bại";
     }
+    public static class Firebase
+    {
+        public const string NoFileUpload = "Không tìm thấy file để tải lên";
+        public const string UploadSuccessful = "Tải lên thành công";
+        public const string UploadFail = "Tải lên thất bại";
+        public const string DownloadSuccessful = "Tải xuống thành công";
+        public const string DownloadFail = "Tải xuống thất bại";
+    }
     public static class PanelType
     {
         public const string EmptyPanelTypeId = "Panel type id bị trống";
@@ -152,6 +160,7 @@ public static class MessageConstant
         public const string UpdateUserSuccess = "Cập nhật User thành công";
         public const string CreateUserFail = "Tạo User thất bại";
         public const string UpdateUserFail  = "Cập nhật User thất bại";
+        public const string ExistUser = "User id đã tồn tại";
     }
     public static class UserSubscription
     {
@@ -161,5 +170,7 @@ public static class MessageConstant
         public const string UpdateUserSubscriptionSuccess = "Cập nhật User subscription thành công";
         public const string CreateUserSubscriptionFail = "Tạo User subscription thất bại";
         public const string UpdateUserSubscriptionFail  = "Cập nhật User subscription thất bại";
+        public const string ExistUserSubscription  = "User subscription đã tồn tại";
+        public const string RegisterUserSubscriptionFail  = "Bạn không thể hạ xuống subscription bằng hoặc thấp cấp hơn";
     }
 }

@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PanelWay_Backend.API.Constants;
+using PanelWay_Backend.API.Enums;
 using PanelWay_Backend.API.Payload.Responses.Subscriptions;
 using PanelWay_Backend.API.Services.Interfaces;
+using PanelWay_Backend.API.Validators;
 
 namespace PanelWay_Backend.API.Controllers;
 
@@ -13,6 +15,7 @@ public class SubscriptionController : BaseController<SubscriptionController>
         _subscriptionService = subscriptionService;
     }
     
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.Subscription.SubscriptionApiEndpoint)]
     [ProducesResponseType(typeof(ICollection<SubscriptionResponse>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetSubscriptions()
@@ -21,6 +24,7 @@ public class SubscriptionController : BaseController<SubscriptionController>
         return (responses != null) ? Ok(responses) : NotFound(new {Message = MessageConstant.PanelWaySystem.SystemError});
     }
     
+    [CustomAuthorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.AdvertisingClient, RoleEnum.SpaceProvider)]
     [HttpGet(ApiEndpointConstant.Subscription.FindSubscriptionByIdApiEndpoint)]
     [ProducesResponseType(typeof(SubscriptionResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetSubscriptionById(Guid id)

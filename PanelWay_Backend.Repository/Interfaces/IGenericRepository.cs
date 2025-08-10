@@ -65,5 +65,8 @@ namespace PanelWay_Backend.Repository.Interfaces
 
 		void DeleteAsync(T entity);
 		void DeleteRangeAsync(IEnumerable<T> entities);
+
+		int Count(Expression<Func<T, bool>> predicate = null);
+		Task<int> CountAsync(Expression<Func<T, bool>> predicate = null);
 	}
 }

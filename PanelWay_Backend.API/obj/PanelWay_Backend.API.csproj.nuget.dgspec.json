@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.API\\PanelWay_Backend.API.csproj": {}
+    "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.API\\PanelWay_Backend.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.API\\PanelWay_Backend.API.csproj": {
+    "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.API\\PanelWay_Backend.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.API\\PanelWay_Backend.API.csproj",
+        "projectUniqueName": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.API\\PanelWay_Backend.API.csproj",
         "projectName": "PanelWay_Backend.API",
-        "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.API\\PanelWay_Backend.API.csproj",
+        "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.API\\PanelWay_Backend.API.csproj",
         "packagesPath": "C:\\Users\\N.Minh- ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.API\\obj\\",
+        "outputPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\N.Minh- ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj": {
-                "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj"
+              "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj": {
+                "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj"
               }
             }
           }
@@ -39,12 +39,33 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FirebaseAdmin": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.68.0, )"
+            },
+            "Google.Cloud.Storage.V1": {
+              "target": "Package",
+              "version": "[4.10.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -52,6 +73,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
+            },
+            "payOS": {
+              "target": "Package",
+              "version": "[1.0.9, )"
             }
           },
           "imports": [
@@ -75,16 +100,21 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
       }
     },
-    "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj": {
+    "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj",
         "projectName": "PanelWay_Backend.Domain",
-        "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj",
+        "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj",
         "packagesPath": "C:\\Users\\N.Minh- ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Domain\\obj\\",
+        "outputPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\N.Minh- ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -108,6 +138,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -132,9 +167,17 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[112.1.0, )"
             }
           },
           "imports": [
@@ -155,16 +198,21 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
       }
     },
-    "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj": {
+    "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj",
         "projectName": "PanelWay_Backend.Repository",
-        "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj",
+        "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Repository\\PanelWay_Backend.Repository.csproj",
         "packagesPath": "C:\\Users\\N.Minh- ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Repository\\obj\\",
+        "outputPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\N.Minh- ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -182,8 +230,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj": {
-                "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj"
+              "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj": {
+                "projectPath": "C:\\Users\\N.Minh- ADMIN\\Documents\\PanelWay\\PanelWay_API_3\\PanelWay_API\\PanelWay_Backend.Domain\\PanelWay_Backend.Domain.csproj"
               }
             }
           }
@@ -192,6 +240,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -214,6 +267,11 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     }
